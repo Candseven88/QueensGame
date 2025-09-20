@@ -1,0 +1,211 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { GameDetailPage } from "./pages/GameDetailPage";
+import { TopicPage } from "./pages/TopicPage";
+import { TopicShowcase } from "./components/TopicShowcase";
+import { SilksongPromo } from "./components/SilksongPromo";
+import { GameFilters } from "./components/filters/GameFilters";
+import { GameGrid } from "./components/filters/GameGrid";
+import { GamingBackground } from "./components/ui/EnhancedBackground";
+import { RouteTransition } from "./components/animations/PageTransition";
+import { PremiumButton } from "./components/ui/PremiumButton";
+import { SilksongPage } from "./pages/SilksongPage";
+import { DriftBossPage } from "./pages/DriftBossPage";
+import { RabbitRoadPage } from "./pages/RabbitRoadPage";
+import { allGames } from "./data/gameData";
+import { Game } from "./types/Game";
+import { trackPageView, trackGameView } from "./utils/analytics";
+import './styles/design-system.css';
+
+function App() {
+  const [showAllGames, setShowAllGames] = useState(false);
+  const [filteredGames, setFilteredGames] = useState<Game[]>(allGames);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  const handleGameClick = (game: Game) => {
+    trackGameView(game);
+    const gameId = game.url.split("/").pop();
+    window.location.href = `/games/${gameId}`;
+  };
+
+  const handleFilteredGames = (games: Game[]) => {
+    setFilteredGames(games);
+  };
+
+  const handleViewModeChange = (mode: "grid" | "list") => {
+    setViewMode(mode);
+  };
+
+  return (
+    <Router>
+      <div className="min-h-screen relative">
+        {/* Enhanced Gaming Background */}
+        <GamingBackground interactive={true} />
+        
+        <div className="relative z-10">
+          <RouteTransition>
+            <Routes>
+              <Route path="/games/:gameId" element={<GameDetailPage />} />
+              <Route path="/topic/:topicSlug" element={<TopicPage />} />
+              <Route path="/hollow-knight-silksong" element={<SilksongPage />} />
+              <Route path="/drift-boss" element={<DriftBossPage />} />
+              <Route path="/rabbit-road" element={<RabbitRoadPage />} />
+              
+              {/* 所有游戏页面路由 */}
+              <Route path="/games" element={
+                <>
+                  <Header />
+                  <main className="pt-28 sm:pt-32">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                      <div className="text-center mb-8">
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 gradient-text-neon">
+                          All Games
+                        </h1>
+                        <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                          Browse our complete collection of {allGames.length} premium games
+                        </p>
+                      </div>
+                      
+                      {/* 游戏过滤器和网格 */}
+                      <div className="premium-card p-6 mb-8">
+                        <GameFilters 
+                          games={allGames} 
+                          onFilteredGames={handleFilteredGames}
+                          viewMode={viewMode}
+                          onViewModeChange={handleViewModeChange}
+                        />
+                      </div>
+
+                      <GameGrid 
+                        games={filteredGames}
+                        viewMode={viewMode}
+                        onGameClick={handleGameClick}
+                      />
+
+                      {/* 统计信息 */}
+                      <div className="text-center mt-12 pb-8">
+                        <div className="premium-card p-4 max-w-md mx-auto">
+                          <p className="text-white">
+                            Total Games: <span className="gradient-text font-bold">{allGames.length}</span>
+                            {filteredGames.length !== allGames.length && (
+                              <>
+                                {" "}• Showing: <span className="gradient-text font-bold">{filteredGames.length}</span>
+                              </>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </main>
+                  <Footer />
+                </>
+              } />
+              
+              <Route path="/" element={
+                <>
+                  <Header />
+                  <main className="pt-28 sm:pt-32">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                      {/* Welcome Section */}
+                      <div className="text-center mb-12">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg gradient-text-neon">
+                          Welcome to QueensGame
+                        </h1>
+                        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-md mb-8">
+                          Discover our premium collection of royal gaming experiences. Play the best HTML5 games online for free!
+                        </p>
+                        
+                        {/* Quick Action Buttons */}
+                        <div className="flex items-center justify-center space-x-6 mb-8">
+                          <PremiumButton
+                            variant={showAllGames ? "secondary" : "neon"}
+                            effect="glow"
+                            size="lg"
+                            onClick={() => setShowAllGames(!showAllGames)}
+                            className="shadow-2xl"
+                          >
+                            {showAllGames ? 'Show Featured' : 'Browse All Games'}
+                          </PremiumButton>
+                        </div>
+                      </div>
+
+                      {/* Conditional Content */}
+                      {showAllGames ? (
+                        <div>
+                          {/* Full Game Browser with Filters */}
+                          <div className="premium-card p-6 mb-8">
+                            <GameFilters 
+                              games={allGames} 
+                              onFilteredGames={handleFilteredGames}
+                              viewMode={viewMode}
+                              onViewModeChange={handleViewModeChange}
+                            />
+                          </div>
+
+                          <GameGrid 
+                            games={filteredGames}
+                            viewMode={viewMode}
+                            onGameClick={handleGameClick}
+                          />
+
+                          {/* Statistics */}
+                          <div className="text-center mt-12 pb-8">
+                            <div className="premium-card p-4 max-w-md mx-auto">
+                              <p className="text-white">
+                                Total Games: <span className="gradient-text font-bold">{allGames.length}</span>
+                                {filteredGames.length !== allGames.length && (
+                                  <>
+                                    {" "}• Showing: <span className="gradient-text font-bold">{filteredGames.length}</span>
+                                  </>
+                                )}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          {/* Featured Topic Showcase */}
+                          <TopicShowcase onGameClick={handleGameClick} />
+                          
+                          {/* Simple Stats */}
+                          <div className="text-center mt-12 pb-8">
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                              <div className="premium-card p-4">
+                                <div className="text-2xl font-bold gradient-text mb-1">{allGames.length}+</div>
+                                <div className="text-white/80 text-sm">Total Games</div>
+                              </div>
+                              <div className="premium-card p-4">
+                                <div className="text-2xl font-bold gradient-text mb-1">12</div>
+                                <div className="text-white/80 text-sm">Categories</div>
+                              </div>
+                              <div className="premium-card p-4">
+                                <div className="text-2xl font-bold gradient-text mb-1">100%</div>
+                                <div className="text-white/80 text-sm">Free to Play</div>
+                              </div>
+                              <div className="premium-card p-4">
+                                <div className="text-2xl font-bold gradient-text mb-1">Daily</div>
+                                <div className="text-white/80 text-sm">Updates</div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Silksong Hot Topic Promo - 放在页面底部 */}
+                          <SilksongPromo />
+                        </>
+                      )}
+                    </div>
+                  </main>
+                  <Footer />
+                </>
+              } />
+            </Routes>
+          </RouteTransition>
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
