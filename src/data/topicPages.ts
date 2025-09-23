@@ -40,7 +40,7 @@ export const topicPages: TopicPage[] = [
     seoTitle: 'Trending Games 2024 - Play the Hottest Online Games | QueensGame',
     seoDescription: 'Play the most trending and viral games of 2024. Discover what everyone is playing right now - free HTML5 games updated daily.',
     seoKeywords: 'trending games, viral games, popular games, hot games, most played games 2024, trending online games',
-    priority: 2,
+    priority: 0,
     color: '#FF6B6B',
     gradient: 'from-red-500 to-pink-500'
   },

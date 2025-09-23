@@ -14,6 +14,8 @@ import { PremiumButton } from "./components/ui/PremiumButton";
 import { SilksongPage } from "./pages/SilksongPage";
 import { DriftBossPage } from "./pages/DriftBossPage";
 import { RabbitRoadPage } from "./pages/RabbitRoadPage";
+import { BloodmoneyPage } from "./pages/BloodmoneyPage";
+import { LoveMoneyPage } from "./pages/LoveMoneyPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -52,6 +54,8 @@ function App() {
               <Route path="/hollow-knight-silksong" element={<SilksongPage />} />
               <Route path="/drift-boss" element={<DriftBossPage />} />
               <Route path="/rabbit-road" element={<RabbitRoadPage />} />
+              <Route path="/games/human-expenditure-program-bloodmoney-2" element={<BloodmoneyPage />} />
+              <Route path="/games/lovemoney-game" element={<LoveMoneyPage />} />
               
               {/* 所有游戏页面路由 */}
               <Route path="/games" element={

@@ -2,8 +2,81 @@ import { Game, GameCategory } from "../types/Game";
 import { gameMonetizeGames } from "./gameMonetizeData";
 import { enhanceGameData, distributeSpecialMarks, enhanceGameTags } from "../utils/enhanceGameData";
 
-// 真实的GameMonetize游戏数据 - 包含6个新游戏
+// 真实的GameMonetize游戏数据 - 包含新游戏推荐
 export const featuredGames: Game[] = [
+  // 新游戏推荐 - 置顶显示
+  {
+    id: "lovemoney-game",
+    title: "LoveMoney: Moral Clicker RPG",
+    description: "LoveMoney is an emotionally charged clicker RPG where desperate circumstances drive difficult choices. You need money for life-saving surgery but face an unconventional opportunity at a mysterious stall. This narrative-driven clicker combines fast-paced gameplay with heavy moral weight, challenging players to balance survival needs against ethical boundaries. Each click advances both your financial goals and a deeply personal story of relationships, sacrifice, and the true cost of desperation.",
+    shortDescription: "A bold clicker RPG mixing moral choices with fast-paced gameplay - earn money for life-saving surgery through questionable means.",
+    thumbnail: "/thumbnail/LOVEMONEY.jpg",
+    category: "Royal Adventure", 
+    tags: ["1 Player", "Clicker", "RPG", "Story-driven", "Moral Choices", "Drama", "Survival", "Emotional", "Idle Game", "New Game"],
+    url: "/games/lovemoney-game",
+    embedUrl: "https://lovemoneygame.io/game/lovemoney-game/",
+    fallbackUrls: ["https://sprunki.org/lovemoney"],
+    width: 1024,
+    height: 768,
+    provider: "external",
+    rating: 4.5,
+    plays: 8500,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-09-23T14:00:00.000Z",
+    author: "Independent Developer",
+    releaseDate: "2025-09-22",
+    language: "English",
+    seoKeywords: "lovemoney game, clicker rpg, moral choices, life saving surgery, emotional clicker, story driven game, idle rpg, survival drama, relationship choices",
+    external: true,
+    instructions: [
+      "Click to earn money needed for life-saving surgery",
+      "Make difficult moral choices that affect the story outcome",
+      "Meet the mysterious stall owner and learn their unconventional methods",
+      "Balance your financial needs with ethical boundaries",
+      "Experience the emotional weight of survival-driven decisions",
+      "Unlock different story paths based on your choices",
+      "Manage relationships while pursuing your desperate goal"
+    ]
+  },
+  {
+    id: "bloodmoney-2",
+    title: "Human Expenditure Program: Bloodmoney 2",
+    description: "Experience Human Expenditure Program: Bloodmoney 2, a psychological horror clicker game where each click inflicts pain on Harvey Harvington, and the pain is very real. This deceptively simple clicker mechanic comes with heavy moral responsibility. The game requires mental resilience and is not recommended for those sensitive to flashing lights. Discover what the Human Expenditure Program really is, who's behind it, and your actual role in this dark experiment.",
+    shortDescription: "A psychological horror clicker where each click affects Harvey Harvington's well-being in this moral responsibility thriller.",
+    thumbnail: "/thumbnail/Bloodmoney_2.jpg",
+    category: "Royal Adventure",
+    tags: ["1 Player", "Clicker", "Psychological Horror", "Thriller", "Drama", "Mystery", "Virtual Pet", "Horror", "Sad", "Suspense", "New Game"],
+    url: "/games/human-expenditure-program-bloodmoney-2",
+    embedUrl: "https://yoplay.io/human-expenditure-program-bloodmoney-2.embed",
+    fallbackUrls: ["https://sprunki.org/bloodmoney-2"],
+    width: 1280,
+    height: 720,
+    provider: "external",
+    rating: 4.3,
+    plays: 12000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-09-23T12:00:00.000Z",
+    author: "Shroomychrist Studios",
+    releaseDate: "2025-09-20",
+    language: "English",
+    seoKeywords: "bloodmoney 2, human expenditure program, psychological horror clicker, harvey harvington, virtual pet game, moral responsibility game, shroomychrist studios, clicker horror game, drama thriller",
+    external: true,
+    instructions: [
+      "Click on Harvey Harvington to interact - but remember, the pain you inflict is real",
+      "Each click has moral weight and psychological consequences",
+      "Monitor Harvey's well-being as you progress through the experiment",
+      "Discover the truth behind the Human Expenditure Program through gameplay",
+      "Experience the heavy responsibility that comes with each interaction",
+      "Use mouse clicks to advance the story and uncover dark secrets",
+      "Be prepared for psychological impact - mental resilience required"
+    ]
+  },
   // 特色游戏 - 从所有游戏中精选
   {
     id: "gm-34678",
@@ -93,7 +166,7 @@ export const gameCategories: GameCategory[] = [
     slug: "royal-adventure",
     description: "Epic adventures and exploration games",
     icon: "👑",
-    gameCount: 9
+    gameCount: 10
   },
   {
     id: "3",

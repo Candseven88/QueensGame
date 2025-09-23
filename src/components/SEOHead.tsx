@@ -6,9 +6,13 @@ interface SEOHeadProps {
   title?: string;
   description?: string;
   keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  canonical?: string;
 }
 
-export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keywords }) => {
+export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keywords, ogTitle, ogDescription, ogImage, canonical }) => {
   React.useEffect(() => {
     // 如果没有提供游戏，但提供了自定义标题和描述
     if (!game && (title || description)) {
@@ -46,10 +50,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
         meta.setAttribute('content', content);
       };
       
-      setMetaTag('og:title', title || 'QueensGame');
-      setMetaTag('og:description', description || '');
+      setMetaTag('og:title', ogTitle || title || 'QueensGame');
+      setMetaTag('og:description', ogDescription || description || '');
       setMetaTag('og:type', 'website');
       setMetaTag('og:url', window.location.href);
+      if (ogImage) {
+        setMetaTag('og:image', ogImage);
+      }
       
       // 设置Twitter Card标签
       const setTwitterTag = (name: string, content: string) => {
@@ -63,8 +70,22 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
       };
       
       setTwitterTag('twitter:card', 'summary');
-      setTwitterTag('twitter:title', title || 'QueensGame');
-      setTwitterTag('twitter:description', description || '');
+      setTwitterTag('twitter:title', ogTitle || title || 'QueensGame');
+      setTwitterTag('twitter:description', ogDescription || description || '');
+      if (ogImage) {
+        setTwitterTag('twitter:image', ogImage);
+      }
+      
+      // 设置canonical URL
+      if (canonical) {
+        let canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (!canonicalLink) {
+          canonicalLink = document.createElement('link');
+          canonicalLink.setAttribute('rel', 'canonical');
+          document.head.appendChild(canonicalLink);
+        }
+        canonicalLink.setAttribute('href', canonical);
+      }
       
       return;
     }
@@ -105,9 +126,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
         meta.setAttribute('content', content);
       };
       
-      setMetaTag('og:title', title || game.title);
-      setMetaTag('og:description', description || game.description);
-      setMetaTag('og:image', game.thumbnail);
+      setMetaTag('og:title', ogTitle || title || game.title);
+      setMetaTag('og:description', ogDescription || description || game.description);
+      setMetaTag('og:image', ogImage || game.thumbnail);
       setMetaTag('og:type', 'game');
       setMetaTag('og:url', window.location.href);
       
@@ -123,9 +144,20 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
       };
       
       setTwitterTag('twitter:card', 'summary_large_image');
-      setTwitterTag('twitter:title', title || game.title);
-      setTwitterTag('twitter:description', description || game.description);
-      setTwitterTag('twitter:image', game.thumbnail);
+      setTwitterTag('twitter:title', ogTitle || title || game.title);
+      setTwitterTag('twitter:description', ogDescription || description || game.description);
+      setTwitterTag('twitter:image', ogImage || game.thumbnail);
+      
+      // 设置canonical URL
+      if (canonical) {
+        let canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (!canonicalLink) {
+          canonicalLink = document.createElement('link');
+          canonicalLink.setAttribute('rel', 'canonical');
+          document.head.appendChild(canonicalLink);
+        }
+        canonicalLink.setAttribute('href', canonical);
+      }
       
       // 添加结构化数据 (JSON-LD)
       const structuredData = {
