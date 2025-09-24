@@ -74,6 +74,41 @@ class EnhancedSitemapGenerator {
         priority: 1.0
       },
       {
+        loc: `${this.baseUrl}/games`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'daily',
+        priority: 0.9
+      },
+      {
+        loc: `${this.baseUrl}/yugioh-genesys`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'weekly',
+        priority: 0.9,
+        images: [{
+          loc: `${this.baseUrl}/thumbnail/yugioh-genesys-banner.jpg`,
+          caption: 'Yu-Gi-Oh! GENESYS - Revolutionary TCG Format Guide',
+          title: 'Yu-Gi-Oh! GENESYS Format Overview'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/hollow-knight-silksong`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'weekly',
+        priority: 0.9
+      },
+      {
+        loc: `${this.baseUrl}/drift-boss`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'weekly',
+        priority: 0.9
+      },
+      {
+        loc: `${this.baseUrl}/rabbit-road`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'weekly',
+        priority: 0.9
+      },
+      {
         loc: `${this.baseUrl}/about`,
         lastmod: new Date().toISOString(),
         changefreq: 'monthly',

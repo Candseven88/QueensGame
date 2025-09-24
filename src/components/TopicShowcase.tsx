@@ -28,6 +28,7 @@ export const TopicShowcase: React.FC<TopicShowcaseProps> = ({ onGameClick }) => 
       case '📅': return <Calendar className="w-5 h-5" />;
       case '💎': return <Diamond className="w-5 h-5" />;
       case '⚡': return <TrendingUp className="w-5 h-5" />;
+      case '🃏': return <span className="text-lg">🃏</span>;
       default: return <span className="text-lg">{iconString}</span>;
     }
   };
@@ -45,7 +46,38 @@ export const TopicShowcase: React.FC<TopicShowcaseProps> = ({ onGameClick }) => 
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-4 gap-6">
+          {/* Yu-Gi-Oh! GENESYS Card - BRAND NEW TOPIC */}
+          <div className="premium-card p-6 hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden"
+               onClick={() => navigate('/yugioh-genesys')}>
+            {/* New Topic Badge */}
+            <div className="absolute top-3 right-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10">
+              🃏 NEW
+            </div>
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
+                <span className="text-2xl">🃏</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-white mb-1">Yu-Gi-Oh! GENESYS</h3>
+                <p className="text-white/70 text-sm">Revolutionary TCG format</p>
+              </div>
+              <ExternalLink className="w-5 h-5 text-white/60" />
+            </div>
+            <div className="space-y-3">
+              <p className="text-white/80 text-sm">
+                Discover Konami's new simplified format with point-based deck construction and nostalgic gameplay.
+              </p>
+              <div className="flex items-center justify-between text-xs text-white/60">
+                <div className="flex items-center space-x-4">
+                  <span>🏆 Official Format</span>
+                  <span>🃏 TCG</span>
+                </div>
+                <span className="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full">🔥 Hot Topic</span>
+              </div>
+            </div>
+          </div>
+
           {/* Bloodmoney 2 Card - NEW GAME FEATURED */}
           <div className="premium-card p-6 hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden"
                onClick={() => navigate('/games/human-expenditure-program-bloodmoney-2')}>

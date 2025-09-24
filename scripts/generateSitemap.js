@@ -104,6 +104,14 @@ function generateSitemapXML(games) {
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- 特色页面: Yu-Gi-Oh! GENESYS -->
+  <url>
+    <loc>${baseUrl}/yugioh-genesys</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>`;
 
   // 使用Set来去重，避免重复的游戏URL

@@ -136,6 +136,7 @@ export const TopicPage: React.FC = () => {
       case '📅': return <Calendar className="w-8 h-8" />;
       case '💎': return <Diamond className="w-8 h-8" />;
       case '⚡': return <TrendingUp className="w-8 h-8" />;
+      case '🃏': return <span className="text-3xl">🃏</span>;
       default: return <span className="text-3xl">{iconString}</span>;
     }
   };

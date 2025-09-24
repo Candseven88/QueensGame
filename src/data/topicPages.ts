@@ -202,6 +202,22 @@ export const topicPages: TopicPage[] = [
     priority: 12,
     color: '#FF6B6B',
     gradient: 'from-red-500 to-orange-500'
+  },
+  {
+    id: 'yugioh-genesys',
+    title: 'Yu-Gi-Oh! GENESYS',
+    slug: 'yugioh-genesys',
+    description: 'Discover the revolutionary Yu-Gi-Oh! GENESYS format - simplified tournament rules, point-based deck construction, and nostalgic gameplay experience!',
+    icon: '🃏',
+    filterCriteria: (game: Game) => game.tags.some(tag => ['yugioh', 'card game', 'strategy', 'tcg', 'genesys', 'trading card'].includes(tag.toLowerCase())) ||
+      game.title.toLowerCase().includes('yu-gi-oh') ||
+      game.category.toLowerCase().includes('card'),
+    seoTitle: 'Yu-Gi-Oh! GENESYS Format Guide - Tournament Rules & Deck Building | QueensGame',
+    seoDescription: 'Learn about Yu-Gi-Oh! GENESYS format with simplified rules, point-based deck construction, and no Link/Pendulum monsters. Perfect for new and returning duelists.',
+    seoKeywords: 'yugioh genesys, yugioh tournament format, tcg genesys, point system yugioh, simplified yugioh rules, no link monsters, pendulum ban, deck building points',
+    priority: 1,
+    color: '#8B5CF6',
+    gradient: 'from-purple-600 to-blue-600'
   }
 ];
 

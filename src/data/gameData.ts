@@ -222,9 +222,108 @@ export const getAllCategories = (): GameCategory[] => {
   return gameCategories;
 };
 
+// Yu-Gi-Oh! and Card Games for GENESYS topic
+export const cardGames: Game[] = [
+  {
+    id: "yugioh-master-duel",
+    title: "Yu-Gi-Oh! Master Duel",
+    description: "Experience the definitive Yu-Gi-Oh! digital card game with over 10,000 cards from the entire TCG history. Build competitive decks, duel online, and master the art of strategic card battling in this free-to-play masterpiece.",
+    shortDescription: "The ultimate Yu-Gi-Oh! digital experience with thousands of cards and competitive online dueling.",
+    thumbnail: "https://cdn.cloudflare.steamstatic.com/steam/apps/1449850/header.jpg",
+    category: "Card Game",
+    tags: ["yugioh", "card game", "strategy", "tcg", "multiplayer", "competitive", "deck building", "anime"],
+    url: "/games/yugioh-master-duel",
+    embedUrl: "https://www.konami.com/yugioh/masterduel/",
+    width: 1920,
+    height: 1080,
+    provider: "external",
+    rating: 4.7,
+    plays: 125000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    createdAt: "2024-09-20T10:00:00.000Z",
+    author: "Konami",
+    releaseDate: "2022-01-19",
+    language: "English",
+    seoKeywords: "yugioh master duel, digital card game, online dueling, deck building, tcg",
+    external: true
+  },
+  {
+    id: "classic-card-battles",
+    title: "Classic Card Battles",
+    description: "Dive into strategic card battles with simplified rules reminiscent of classic TCG formats. Perfect for players who enjoy the GENESYS-style gameplay with point-based deck construction and balanced competition.",
+    shortDescription: "Strategic card game with simplified rules and balanced deck building mechanics.",
+    thumbnail: "https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Classic+Card+Battles",
+    category: "Card Game", 
+    tags: ["card game", "strategy", "deck building", "genesys", "classic", "tcg", "competitive"],
+    url: "/games/classic-card-battles",
+    embedUrl: "https://example.com/classic-card-battles",
+    width: 1024,
+    height: 768,
+    provider: "custom",
+    rating: 4.3,
+    plays: 45000,
+    featured: true,
+    weeklyPick: true,
+    createdAt: "2024-09-15T12:00:00.000Z",
+    author: "QueensGame Studios",
+    releaseDate: "2024-09-15",
+    language: "English",
+    seoKeywords: "card battles, strategy game, deck building, simplified rules, tcg"
+  },
+  {
+    id: "duel-arena-legends",
+    title: "Duel Arena Legends",
+    description: "Enter the ultimate duel arena where strategic card play meets epic monster battles. Build your deck, summon powerful creatures, and engage in turn-based combat that captures the essence of classic card game tournaments.",
+    shortDescription: "Epic monster dueling game with strategic deck building and tournament-style gameplay.",
+    thumbnail: "https://via.placeholder.com/400x300/6366F1/FFFFFF?text=Duel+Arena+Legends",
+    category: "Card Game",
+    tags: ["card game", "monsters", "strategy", "tournament", "dueling", "tcg", "competitive", "fantasy"],
+    url: "/games/duel-arena-legends", 
+    embedUrl: "https://example.com/duel-arena-legends",
+    width: 1024,
+    height: 768,
+    provider: "custom",
+    rating: 4.5,
+    plays: 67000,
+    hotGame: true,
+    mostPlayed: true,
+    createdAt: "2024-09-10T14:00:00.000Z",
+    author: "Arena Games",
+    releaseDate: "2024-09-10",
+    language: "English",
+    seoKeywords: "duel arena, monster battles, card strategy, tournament play"
+  },
+  {
+    id: "nostalgic-card-master",
+    title: "Nostalgic Card Master",
+    description: "Relive the golden age of trading card games with this nostalgia-filled experience. Features classic gameplay mechanics, familiar card types, and strategic depth that veteran players will appreciate.",
+    shortDescription: "Classic trading card experience with nostalgic gameplay and strategic depth.",
+    thumbnail: "https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=Nostalgic+Card+Master",
+    category: "Card Game",
+    tags: ["card game", "nostalgic", "classic", "trading card", "strategy", "retro", "tcg"],
+    url: "/games/nostalgic-card-master",
+    embedUrl: "https://example.com/nostalgic-card-master", 
+    width: 1024,
+    height: 768,
+    provider: "custom",
+    rating: 4.2,
+    plays: 38000,
+    exclusive: true,
+    bestGame: true,
+    createdAt: "2024-09-05T16:00:00.000Z",
+    author: "Retro Gaming Co",
+    releaseDate: "2024-09-05",
+    language: "English",
+    seoKeywords: "nostalgic card game, classic tcg, retro gaming, strategic card play"
+  }
+];
+
 // 合并所有游戏数据
 const rawGames: Game[] = [
   ...featuredGames,
+  ...cardGames,
   ...gameMonetizeGames // 使用所有可用的游戏，不再限制数量
 ];
 

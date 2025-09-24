@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://queensgame.games/</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://queensgame.games/yugioh-genesys</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/yugioh-genesys-banner.jpg</image:loc>
+      <image:caption>Yu-Gi-Oh! GENESYS - Revolutionary TCG Format Guide</image:caption>
+      <image:title>Yu-Gi-Oh! GENESYS Format Overview</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/hollow-knight-silksong</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://queensgame.games/drift-boss</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://queensgame.games/rabbit-road</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
