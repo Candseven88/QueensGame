@@ -2,6 +2,23 @@ import { TopicPage, Game } from '../types/Game';
 
 export const topicPages: TopicPage[] = [
   {
+    id: 'palworld',
+    title: 'Palworld: Palfarm',
+    slug: 'palworld',
+    description: 'Discover Palworld Palfarm, the revolutionary farming simulator that combines creature collection with cozy life simulation and multiplayer farming adventures.',
+    icon: '🌱',
+    filterCriteria: (game: Game) => game.tags.some(tag => ['palworld', 'farming', 'simulation', 'creature collection', 'cozy', 'multiplayer', 'life sim', 'pokemon'].includes(tag.toLowerCase())) ||
+      game.title.toLowerCase().includes('palworld') ||
+      game.title.toLowerCase().includes('farm') ||
+      game.category.toLowerCase().includes('simulation'),
+    seoTitle: 'Palworld: Palfarm - Revolutionary Farming Simulator with Creature Collection | QueensGame',
+    seoDescription: 'Explore Palworld Palfarm, the cozy life farming simulator spinoff featuring creature collection, multiplayer farming, and mysterious black market elements. Latest news and gameplay insights.',
+    seoKeywords: 'palworld palfarm, farming simulator, creature collection, pocketpair, cozy life sim, multiplayer farming, pal creatures, pokemon-like games, farming games 2024, life simulation',
+    priority: 0,
+    color: '#4ADE80',
+    gradient: 'from-green-500 to-blue-500'
+  },
+  {
     id: 'rabbit-road',
     title: 'Rabbit Road',
     slug: 'rabbit-road',
@@ -11,7 +28,7 @@ export const topicPages: TopicPage[] = [
     seoTitle: 'Rabbit Road - Ultimate Arcade Adventure Experience | QueensGame',
     seoDescription: 'Discover Rabbit Road, the expert-verified arcade game with 250K+ players worldwide. Family-friendly rabbit adventure with premium gameplay.',
     seoKeywords: 'rabbit road, arcade games, animal games, adventure games, family games, safe games, expert verified',
-    priority: 0,
+    priority: 1,
     color: '#FF6B9D',
     gradient: 'from-pink-500 to-purple-500'
   },
@@ -26,7 +43,7 @@ export const topicPages: TopicPage[] = [
     seoTitle: 'Drift Boss - Play the Viral Car Drifting Game Online | QueensGame',
     seoDescription: 'Play Drift Boss online for free! Master the art of drifting in this addictive one-click driving game. Navigate tricky corners, collect coins, and unlock new cars.',
     seoKeywords: 'drift boss, car drifting game, one click game, driving game, car game, arcade game, drift racing, casual game',
-    priority: 1,
+    priority: 2,
     color: '#FF6B35',
     gradient: 'from-blue-500 to-cyan-500'
   },

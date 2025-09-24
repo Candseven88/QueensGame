@@ -17,6 +17,7 @@ import { RabbitRoadPage } from "./pages/RabbitRoadPage";
 import { BloodmoneyPage } from "./pages/BloodmoneyPage";
 import { LoveMoneyPage } from "./pages/LoveMoneyPage";
 import { YugiohGenesysPage } from "./pages/YugiohGenesysPage";
+import { PalworldPage } from "./pages/PalworldPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -58,6 +59,7 @@ function App() {
               <Route path="/games/human-expenditure-program-bloodmoney-2" element={<BloodmoneyPage />} />
               <Route path="/games/lovemoney-game" element={<LoveMoneyPage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
+              <Route path="/palworld" element={<PalworldPage />} />
               
               {/* 所有游戏页面路由 */}
               <Route path="/games" element={

@@ -124,6 +124,31 @@ export const SilksongPromo: React.FC = () => {
               <span className="font-medium">Trending #1 Game</span>
             </div>
           </div>
+          
+          {/* Cross-promotion to other hot topics */}
+          <div className="mt-6 pt-4 border-t border-white/10">
+            <p className="text-white/60 text-sm mb-3">Also trending:</p>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => navigate('/palworld')}
+                className="bg-gradient-to-r from-green-500/20 to-blue-500/20 hover:from-green-500/30 hover:to-blue-500/30 border border-green-500/30 text-white px-3 py-1 rounded-lg text-sm transition-all duration-200 hover:scale-105"
+              >
+                🌱 Palworld: Palfarm
+              </button>
+              <button
+                onClick={() => navigate('/yugioh-genesys')}
+                className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 border border-purple-500/30 text-white px-3 py-1 rounded-lg text-sm transition-all duration-200 hover:scale-105"
+              >
+                🃏 Yu-Gi-Oh! GENESYS
+              </button>
+              <button
+                onClick={() => navigate('/drift-boss')}
+                className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 border border-blue-500/30 text-white px-3 py-1 rounded-lg text-sm transition-all duration-200 hover:scale-105"
+              >
+                🏎️ Drift Boss
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

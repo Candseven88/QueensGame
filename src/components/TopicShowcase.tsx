@@ -47,6 +47,22 @@ export const TopicShowcase: React.FC<TopicShowcaseProps> = ({ onGameClick }) => 
         </div>
         
         <div className="grid md:grid-cols-4 gap-6">
+          {/* Palworld Palfarm Card - LATEST HOT TOPIC */}
+          <div className="group premium-card p-6 hover:scale-105 transition-all duration-300 cursor-pointer bg-gradient-to-br from-green-500/20 to-blue-500/20 border-2 border-green-500/30"
+               onClick={() => navigate('/palworld')}>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-2xl">
+                🌱
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Palworld: Palfarm</h3>
+              <p className="text-white/80 text-sm mb-4">Revolutionary farming simulator with creature collection</p>
+              <div className="flex items-center justify-center text-green-400 text-sm">
+                <span>Latest News</span>
+                <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+
           {/* Yu-Gi-Oh! GENESYS Card - BRAND NEW TOPIC */}
           <div className="premium-card p-6 hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden"
                onClick={() => navigate('/yugioh-genesys')}>
