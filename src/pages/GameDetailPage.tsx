@@ -188,24 +188,62 @@ export const GameDetailPage: React.FC = () => {
   const getRelatedGames = () => {
     if (!game) return [];
     
-    return allGames
-      .filter(g => {
-        if (g.id === game.id) return false;
+    // Enhanced recommendation algorithm with weighted scoring
+    const scoredGames = allGames
+      .filter(g => g.id !== game.id)
+      .map(g => {
+        let score = 0;
         
-        // Same category gets priority
-        if (g.category === game.category) return true;
+        // Category match (highest weight)
+        if (g.category === game.category) score += 10;
         
-        // Shared tags
+        // Tag matches (weighted by importance)
         const sharedTags = g.tags.filter(tag => game.tags.includes(tag));
-        return sharedTags.length >= 2;
+        score += sharedTags.length * 3;
+        
+        // Special game attributes
+        if (g.featured && game.featured) score += 5;
+        if (g.trending && game.trending) score += 4;
+        if (g.editorsPick && game.editorsPick) score += 4;
+        if (g.hotGame && game.hotGame) score += 3;
+        
+        // Quality indicators
+        score += (g.rating || 0) * 2;
+        score += Math.min((g.plays || 0) / 10000, 5); // Cap play count contribution
+        
+        // Freshness boost for new games
+        const gameAge = Date.now() - new Date(g.createdAt).getTime();
+        const daysSinceCreation = gameAge / (1000 * 60 * 60 * 24);
+        if (daysSinceCreation < 30) score += 3; // Boost new games
+        
+        // Provider diversity (prefer different providers for variety)
+        if (g.provider !== game.provider) score += 1;
+        
+        return { game: g, score };
       })
-      .sort((a, b) => {
-        // Sort by rating and plays
-        const scoreA = (a.rating || 0) * 0.6 + (a.plays || 0) / 100000 * 0.4;
-        const scoreB = (b.rating || 0) * 0.6 + (b.plays || 0) / 100000 * 0.4;
-        return scoreB - scoreA;
-      })
-      .slice(0, 8);
+      .sort((a, b) => b.score - a.score)
+      .map(item => item.game);
+    
+    return scoredGames.slice(0, 12); // Return more recommendations for better variety
+  };
+
+  // Get SEO-optimized game recommendations for different sections
+  const getCategorizedRecommendations = () => {
+    const related = getRelatedGames();
+    
+    return {
+      similar: related.slice(0, 4), // Most similar games
+      trending: related.filter(g => g.trending).slice(0, 3),
+      featured: related.filter(g => g.featured).slice(0, 3),
+      newGames: related
+        .filter(g => {
+          const gameAge = Date.now() - new Date(g.createdAt).getTime();
+          const daysSinceCreation = gameAge / (1000 * 60 * 60 * 24);
+          return daysSinceCreation < 7;
+        })
+        .slice(0, 3),
+      sameCategory: related.filter(g => g.category === game?.category).slice(0, 4)
+    };
   };
 
   // Get topic pages this game belongs to
@@ -223,6 +261,7 @@ export const GameDetailPage: React.FC = () => {
 
   const relatedGames = getRelatedGames();
   const gameTopics = getGameTopics();
+  const recommendations = getCategorizedRecommendations();
 
   if (!game) {
     return (
@@ -523,42 +562,106 @@ export const GameDetailPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Related Games */}
-                {relatedGames.length > 0 && (
+                {/* Enhanced Game Recommendations */}
+                {recommendations.similar.length > 0 && (
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <h3 className="text-lg font-bold text-white mb-4">Related Games</h3>
+                    <h3 className="text-lg font-bold text-white mb-4">Similar Games You'll Love</h3>
                     <div className="space-y-3">
-                      {relatedGames.slice(0, 4).map((relatedGame) => (
+                      {recommendations.similar.map((relatedGame) => (
                         <button
                           key={relatedGame.id}
                           onClick={() => navigate(`/games/${relatedGame.url.split('/').pop()}`)}
-                          className="w-full flex items-center space-x-3 p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 text-left"
+                          className="w-full flex items-center space-x-3 p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 text-left group"
                         >
                           <img
                             src={relatedGame.thumbnail}
                             alt={relatedGame.title}
-                            className="w-12 h-12 rounded-lg object-cover"
+                            className="w-12 h-12 rounded-lg object-cover group-hover:scale-105 transition-transform"
                           />
                           <div className="flex-1 min-w-0">
-                            <h4 className="text-white text-sm font-medium truncate">
+                            <h4 className="text-white text-sm font-medium truncate group-hover:text-purple-300 transition-colors">
                               {relatedGame.title}
                             </h4>
-                            <p className="text-gray-400 text-xs">
-                              ⭐ {relatedGame.rating?.toFixed(1) || '4.0'}
-                            </p>
+                            <div className="flex items-center space-x-2 text-xs">
+                              <span className="text-yellow-400">⭐ {relatedGame.rating?.toFixed(1) || '4.0'}</span>
+                              <span className="text-gray-400">•</span>
+                              <span className="text-gray-400">{relatedGame.category}</span>
+                              {relatedGame.trending && <span className="text-red-400">🔥</span>}
+                              {relatedGame.featured && <span className="text-yellow-400">⭐</span>}
+                            </div>
                           </div>
                         </button>
                       ))}
                     </div>
                     
-                    {relatedGames.length > 4 && (
-                      <button
-                        onClick={() => navigate(`/?category=${encodeURIComponent(game.category)}`)}
-                        className="w-full mt-3 text-purple-400 hover:text-purple-300 text-sm font-medium"
-                      >
-                        View All {game.category} Games →
-                      </button>
-                    )}
+                    <button
+                      onClick={() => navigate(`/?category=${encodeURIComponent(game.category)}`)}
+                      className="w-full mt-4 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors"
+                    >
+                      View All {game.category} Games →
+                    </button>
+                  </div>
+                )}
+
+                {/* New Games Section */}
+                {recommendations.newGames.length > 0 && (
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
+                      <span className="text-green-400">🆕</span>
+                      <span>New Game Recommendations</span>
+                    </h3>
+                    <div className="grid gap-3">
+                      {recommendations.newGames.map((newGame) => (
+                        <button
+                          key={newGame.id}
+                          onClick={() => navigate(`/games/${newGame.url.split('/').pop()}`)}
+                          className="flex items-center space-x-3 p-3 bg-gradient-to-r from-green-500/10 to-blue-500/10 hover:from-green-500/20 hover:to-blue-500/20 rounded-lg transition-all duration-300 text-left border border-green-400/20"
+                        >
+                          <img
+                            src={newGame.thumbnail}
+                            alt={newGame.title}
+                            className="w-10 h-10 rounded object-cover"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-white text-sm font-medium truncate">
+                              {newGame.title}
+                            </h4>
+                            <p className="text-green-400 text-xs">New Release</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Trending Games */}
+                {recommendations.trending.length > 0 && (
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
+                      <span className="text-red-400">🔥</span>
+                      <span>Trending Now</span>
+                    </h3>
+                    <div className="grid gap-3">
+                      {recommendations.trending.map((trendingGame) => (
+                        <button
+                          key={trendingGame.id}
+                          onClick={() => navigate(`/games/${trendingGame.url.split('/').pop()}`)}
+                          className="flex items-center space-x-3 p-3 bg-gradient-to-r from-red-500/10 to-pink-500/10 hover:from-red-500/20 hover:to-pink-500/20 rounded-lg transition-all duration-300 text-left border border-red-400/20"
+                        >
+                          <img
+                            src={trendingGame.thumbnail}
+                            alt={trendingGame.title}
+                            className="w-10 h-10 rounded object-cover"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-white text-sm font-medium truncate">
+                              {trendingGame.title}
+                            </h4>
+                            <p className="text-red-400 text-xs">Trending</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

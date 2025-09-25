@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { BackgroundPattern, DarkBackgroundPattern } from '../components/BackgroundPattern';
 import { SEOHead } from '../components/SEOHead';
+import { GameModal } from '../components/GameModal';
 import { allGames } from '../data/gameData';
 import { Game } from '../types/Game';
 import { 
@@ -638,92 +639,11 @@ export const BloodmoneyPage: React.FC = () => {
 
             {/* Game Player Modal */}
             {isPlaying && (
-              <div className="fixed inset-0 bg-black z-50 flex items-center justify-center p-4">
-                <div className="relative w-full h-full max-w-7xl max-h-full bg-black rounded-lg overflow-hidden" ref={gameContainerRef}>
-                  {/* Game Controls Bar */}
-                  <div className="absolute top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm p-3 flex items-center justify-between z-20 border-b border-gray-700">
-                    <div className="flex items-center space-x-3">
-                      <button
-                        onClick={() => setIsPlaying(false)}
-                        className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors text-sm px-3 py-2 rounded hover:bg-gray-700"
-                      >
-                        <X className="w-4 h-4" />
-                        <span>Close</span>
-                      </button>
-                      <div className="text-white font-medium text-sm">{game.title}</div>
-                    </div>
-                    
-                    <button
-                      onClick={handleGameFullscreen}
-                      className="p-2 text-gray-300 hover:text-white transition-colors hover:bg-gray-700 rounded"
-                      title="Toggle Fullscreen"
-                    >
-                      {isGameFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-                    </button>
-                  </div>
-                  
-                  {/* Game Container with Aspect Ratio */}
-                  <div className="relative w-full h-full flex items-center justify-center pt-14">
-                    <div className="relative w-full h-full max-w-full max-h-full">
-                      <div 
-                        className="mx-auto bg-gray-800 shadow-2xl rounded"
-                        style={{
-                          width: `${getOptimalGameSize().width}px`,
-                          height: `${getOptimalGameSize().height}px`,
-                          aspectRatio: getOptimalGameSize().aspectRatio
-                        }}
-                      >
-                        <iframe
-                          src={game.embedUrl}
-                          className="w-full h-full border-0 rounded"
-                          frameBorder="0"
-                          allowFullScreen
-                          title={game.title}
-                          allow="gamepad; microphone; camera; fullscreen"
-                          loading="eager"
-                          scrolling="no"
-                          onLoad={() => {
-                            const loadingElement = document.getElementById('game-loading');
-                            if (loadingElement) {
-                              loadingElement.style.display = 'none';
-                            }
-                            console.log('Game loaded successfully with embed URL');
-                          }}
-                          onError={() => {
-                            const loadingElement = document.getElementById('game-loading');
-                            if (loadingElement) {
-                              loadingElement.innerHTML = `
-                                <div class="text-center">
-                                  <div class="text-yellow-400 mb-3 text-2xl">🎮</div>
-                                  <p class="text-white mb-4">Game loading from original site...</p>
-                                  <p class="text-gray-400 text-sm mb-4">If the game doesn't appear, try opening in a new tab</p>
-                                  <div class="flex gap-4 justify-center">
-                                    <button onclick="window.open('${game.embedUrl}', '_blank')" class="px-6 py-3 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors">
-                                      Open Original Site
-                                    </button>
-                                    <button onclick="window.open('${game.fallbackUrls?.[0]}', '_blank')" class="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
-                                      Try Backup Site
-                                    </button>
-                                  </div>
-                                </div>
-                              `;
-                            }
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Loading Indicator */}
-                  <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10" id="game-loading">
-                    <div className="text-center">
-                      <div className="w-12 h-12 border-4 border-purple-500/20 border-t-purple-500 rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="text-white text-lg">Loading Game...</p>
-                      <p className="text-gray-400 text-sm mt-2">Preparing your psychological thriller experience</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <GameModal
+                game={game}
+                isOpen={isPlaying}
+                onClose={() => setIsPlaying(false)}
+              />
             )}
           </div>
         </main>

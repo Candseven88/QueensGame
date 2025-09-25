@@ -18,6 +18,10 @@ import { BloodmoneyPage } from "./pages/BloodmoneyPage";
 import { LoveMoneyPage } from "./pages/LoveMoneyPage";
 import { YugiohGenesysPage } from "./pages/YugiohGenesysPage";
 import { PalworldPage } from "./pages/PalworldPage";
+import { FlamyDashPage } from "./pages/FlamyDashPage";
+import { SubwayMotoPage } from "./pages/SubwayMotoPage";
+import { KirkaPage } from "./pages/KirkaPage";
+import { SilksongFreePage } from "./pages/SilksongFreePage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -58,6 +62,10 @@ function App() {
               <Route path="/rabbit-road" element={<RabbitRoadPage />} />
               <Route path="/games/human-expenditure-program-bloodmoney-2" element={<BloodmoneyPage />} />
               <Route path="/games/lovemoney-game" element={<LoveMoneyPage />} />
+              <Route path="/games/flamy-dash" element={<FlamyDashPage />} />
+              <Route path="/games/subway-moto" element={<SubwayMotoPage />} />
+              <Route path="/games/kirka" element={<KirkaPage />} />
+              <Route path="/games/silksong-free" element={<SilksongFreePage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
               <Route path="/palworld" element={<PalworldPage />} />
               
