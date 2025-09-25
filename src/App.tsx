@@ -22,6 +22,7 @@ import { FlamyDashPage } from "./pages/FlamyDashPage";
 import { SubwayMotoPage } from "./pages/SubwayMotoPage";
 import { KirkaPage } from "./pages/KirkaPage";
 import { SilksongFreePage } from "./pages/SilksongFreePage";
+import { RaceSurvivalPage } from "./pages/RaceSurvivalPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -66,6 +67,7 @@ function App() {
               <Route path="/games/subway-moto" element={<SubwayMotoPage />} />
               <Route path="/games/kirka" element={<KirkaPage />} />
               <Route path="/games/silksong-free" element={<SilksongFreePage />} />
+              <Route path="/games/race-survival-arena-king" element={<RaceSurvivalPage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
               <Route path="/palworld" element={<PalworldPage />} />
               

@@ -221,6 +221,42 @@ export const featuredGames: Game[] = [
       "Be prepared for psychological impact - mental resilience required"
     ]
   },
+  {
+    id: "race-survival-arena-king",
+    title: "Race Survival: Arena King - New Game Recommendation",
+    description: "Enter the ultimate survival racing arena where speed meets strategy in this heart-pounding vehicular combat experience. Race Survival: Arena King combines high-octane racing with tactical combat mechanics, challenging players to outlast opponents while navigating treacherous arena environments. Master vehicle customization, weapon systems, and arena tactics to claim your throne as the undisputed Arena King. This innovative racing game delivers intense multiplayer battles where only the most skilled drivers survive to see victory.",
+    shortDescription: "High-intensity survival racing with vehicular combat - master speed, strategy, and survival in deadly arena battles!",
+    thumbnail: "/thumbnail/Race_Survival_Arena_King.jpg",
+    category: "Royal Racing",
+    tags: ["1 Player", "Racing", "Survival", "Combat", "Arena", "Strategy", "Vehicles", "New Game", "Action", "Competitive"],
+    url: "/games/race-survival-arena-king",
+    embedUrl: "https://www.gamegab.com:444/content/games/race-survival-arena-king/",
+    fallbackUrls: ["https://www.gamegab.com/games/race-survival-arena-king"],
+    width: 1280,
+    height: 720,
+    provider: "external",
+    rating: 4.6,
+    plays: 8500,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-09-25T14:00:00.000Z",
+    author: "GameGab Studios",
+    releaseDate: "2025-09-25",
+    language: "English",
+    seoKeywords: "race survival arena king, new game recommendation, survival racing, vehicular combat, arena racing, combat racing, racing strategy, multiplayer racing, survival games, arena combat",
+    external: true,
+    instructions: [
+      "Use WASD or arrow keys to control your vehicle's movement and steering",
+      "Navigate through the arena while avoiding obstacles and enemy attacks",
+      "Collect power-ups and weapons to enhance your vehicle's capabilities",
+      "Use strategic positioning to outmaneuver opponents in combat situations",
+      "Master the balance between aggressive racing and defensive survival tactics",
+      "Upgrade your vehicle between rounds to improve performance and survivability",
+      "Eliminate competitors while racing to become the ultimate Arena King"
+    ]
+  },
   // 特色游戏 - 从所有游戏中精选
   {
     id: "gm-34678",

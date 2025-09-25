@@ -588,4 +588,54 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 新游戏页面 - 2025年9月25日更新 -->
+  <url>
+    <loc>https://queensgame.games/games/race-survival-arena-king</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://queensgame.games/games/kirka</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://queensgame.games/games/subway-moto</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://queensgame.games/games/flamy-dash</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://queensgame.games/games/silksong-free</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://queensgame.games/games/human-expenditure-program-bloodmoney-2</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://queensgame.games/games/lovemoney-game</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

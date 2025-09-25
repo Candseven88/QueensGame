@@ -63,4 +63,81 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://queensgame.games/games/race-survival-arena-king</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/Race_Survival_Arena_King.jpg</image:loc>
+      <image:caption>Race Survival: Arena King - Ultimate Vehicular Combat Racing Game</image:caption>
+      <image:title>Race Survival Arena King Gameplay</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games/kirka</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/Kirka.jpg</image:loc>
+      <image:caption>Kirka - Competitive Multiplayer FPS with Tactical Gameplay</image:caption>
+      <image:title>Kirka Multiplayer FPS Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games/subway-moto</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/Subway Moto.png</image:loc>
+      <image:caption>Subway Moto - High-Speed Underground Motorcycle Racing Adventure</image:caption>
+      <image:title>Subway Moto Racing Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games/flamy-dash</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/Flamy Dash.png</image:loc>
+      <image:caption>Flamy Dash - Fast-Paced Dash Adventure with Challenging Obstacles</image:caption>
+      <image:title>Flamy Dash Action Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games/silksong-free</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/How To Get SILKSONG For FREE.jpg</image:loc>
+      <image:caption>How to Get Silksong for Free - Interactive Adventure Guide</image:caption>
+      <image:title>Silksong Free Guide Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games/human-expenditure-program-bloodmoney-2</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/Bloodmoney_2.jpg</image:loc>
+      <image:caption>Human Expenditure Program: Bloodmoney 2 - Psychological Horror Clicker</image:caption>
+      <image:title>Bloodmoney 2 Horror Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://queensgame.games/games/lovemoney-game</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://queensgame.games/thumbnail/LOVEMONEY.jpg</image:loc>
+      <image:caption>LoveMoney: Moral Clicker RPG - Emotionally Charged Gaming Experience</image:caption>
+      <image:title>LoveMoney Clicker RPG</image:title>
+    </image:image>
+  </url>
 </urlset>
