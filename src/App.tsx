@@ -6,6 +6,7 @@ import { GameDetailPage } from "./pages/GameDetailPage";
 import { TopicPage } from "./pages/TopicPage";
 import { TopicShowcase } from "./components/TopicShowcase";
 import { SilksongPromo } from "./components/SilksongPromo";
+import { SilentSaltPromo } from "./components/SilentSaltPromo";
 import { GameFilters } from "./components/filters/GameFilters";
 import { GameGrid } from "./components/filters/GameGrid";
 import { GamingBackground } from "./components/ui/EnhancedBackground";
@@ -208,6 +209,9 @@ function App() {
                               </div>
                             </div>
                           </div>
+                          
+                          {/* Silent Salt Featured Partner Promo */}
+                          <SilentSaltPromo />
                           
                           {/* Silksong Hot Topic Promo - 放在页面底部 */}
                           <SilksongPromo />

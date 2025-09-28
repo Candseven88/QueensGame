@@ -212,6 +212,15 @@ export const Header: React.FC = () => {
             >
               Featured
             </PremiumButton>
+            <PremiumButton
+              variant="neon"
+              effect="glow"
+              size="sm"
+              onClick={() => window.open('https://silentsalt.site/', '_blank')}
+              className="bg-purple-600/20 hover:bg-purple-600/30 border border-purple-400/30"
+            >
+              Silent Salt
+            </PremiumButton>
 
           </nav>
 
@@ -301,6 +310,19 @@ export const Header: React.FC = () => {
                 Featured
               </PremiumButton>
               
+              <PremiumButton
+                variant="neon"
+                effect="glow"
+                size="sm"
+                fullWidth
+                onClick={() => {
+                  window.open('https://silentsalt.site/', '_blank');
+                  setIsMenuOpen(false);
+                }}
+                className="justify-start bg-purple-600/20 hover:bg-purple-600/30 border border-purple-400/30"
+              >
+                🌙 Silent Salt Portal
+              </PremiumButton>
 
               
               {/* 移动端搜索框 */}

@@ -118,6 +118,34 @@ export const Footer: React.FC = () => {
               ))}
             </div>
 
+            {/* Featured Partner Games */}
+            <div className="premium-card p-6 rounded-xl space-y-4 border border-purple-500/20">
+              <h5 className="text-lg font-bold text-white flex items-center">
+                <Star className="w-5 h-5 mr-2 text-yellow-400" />
+                Featured Partner
+              </h5>
+              <div className="space-y-3">
+                <a 
+                  href="https://silentsalt.site/" 
+                  target="_blank" 
+                  rel="dofollow"
+                  className="block group"
+                >
+                  <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 p-4 rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 group-hover:scale-105">
+                    <h6 className="text-white font-bold mb-1 group-hover:text-purple-300 transition-colors">
+                      Silent Salt Game Portal
+                    </h6>
+                    <p className="text-white/60 text-sm mb-2">
+                      Experience the power of the Devil of Silence in this thrilling Cookie Run Kingdom adventure
+                    </p>
+                    <div className="flex items-center text-xs text-purple-300">
+                      <span>Play Silent Salt Cookie →</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
             {/* Newsletter Signup */}
             <div className="premium-card p-6 rounded-xl space-y-4">
               <h5 className="text-lg font-bold text-white">Stay Updated</h5>

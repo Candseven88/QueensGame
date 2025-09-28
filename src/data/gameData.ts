@@ -4,6 +4,44 @@ import { enhanceGameData, distributeSpecialMarks, enhanceGameTags } from "../uti
 
 // 真实的GameMonetize游戏数据 - 包含新游戏推荐
 export const featuredGames: Game[] = [
+  // 特色合作伙伴游戏 - 顶级推荐
+  {
+    id: "silent-salt-cookie",
+    title: "Silent Salt Cookie - Featured Partner Game",
+    description: "Experience the power of the Devil of Silence in this epic Cookie Run Kingdom adventure. Play as Silent Salt Cookie, the fifth and final Beast Cookie, wielding corrupted Solidarity transformed into devastating Silence abilities. Ride alongside the legendary Nox Black Salt through the haunting Land of Silence in this thrilling action-adventure game. Master eclipse powers, stealth mechanics, and devastating combat combos in this premium gaming experience that brings the Cookie Run universe to life.",
+    shortDescription: "Epic Beast Cookie adventure featuring Silent Salt Cookie with eclipse powers and legendary steed companion!",
+    thumbnail: "/thumbnail/How To Get SILKSONG For FREE.jpg",
+    category: "Royal Adventure",
+    tags: ["1 Player", "Adventure", "Action", "Cookie Run", "Beast Cookie", "Eclipse", "Stealth", "Combat", "Fantasy", "Premium", "Featured Partner"],
+    url: "https://silentsalt.site/",
+    embedUrl: "https://silentsalt.site/",
+    fallbackUrls: ["https://silentsalt.site/"],
+    width: 1280,
+    height: 720,
+    provider: "external",
+    rating: 4.9,
+    plays: 10000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-09-28T12:00:00.000Z",
+    author: "Silent Salt Game Portal",
+    releaseDate: "2025-09-28",
+    language: "English",
+    seoKeywords: "silent salt cookie, beast cookie, cookie run kingdom, devil of silence, eclipse powers, nox black salt, stealth mechanics, action adventure, fantasy game, premium gaming",
+    external: true,
+    instructions: [
+      "Master the power of Silent Salt Cookie, the Devil of Silence",
+      "Wield corrupted Solidarity transformed into devastating Silence abilities",
+      "Ride alongside the legendary steed Nox Black Salt through epic battles",
+      "Use stealth mechanics to outmaneuver enemies with precision",
+      "Control eclipse powers to harness the moon's energy in combat",
+      "Execute devastating attack combos with advanced combat system",
+      "Explore the haunting Land of Silence in this premium adventure",
+      "Experience the ultimate Beast Cookie saga in Cookie Run Kingdom"
+    ]
+  },
   // 新游戏推荐 - 置顶显示
   {
     id: "subway-moto",
