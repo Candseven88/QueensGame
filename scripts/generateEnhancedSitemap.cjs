@@ -43,6 +43,12 @@ function generateMainSitemap() {
       lastmod: currentDate,
       changefreq: 'weekly',
       priority: 0.9
+    },
+    {
+      loc: `${baseUrl}/games/queensgame-mirror`,
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: 0.9
     }
   ];
 

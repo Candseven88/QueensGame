@@ -11,6 +11,7 @@ Sitemap: https://queensgame.games/sitemap-main.xml
 # Important pages
 Allow: /yugioh-genesys
 Allow: /games
+Allow: /games/queensgame-mirror
 Allow: /topic/
 
 # Crawl delay

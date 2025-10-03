@@ -1,0 +1,70 @@
+# QueensGame - Premium Royal Gaming Portal
+
+## About QueensGame
+QueensGame is a premium online gaming platform featuring a curated collection of royal gaming experiences. We specialize in high-quality HTML5 games across multiple categories including action, adventure, racing, puzzle, and tournament games.
+
+## Featured Game: Queens Game 225
+Our flagship game "Queens Game 225" offers the ultimate royal puzzle gaming experience with progressive difficulty levels:
+
+### Popular Queens Levels:
+- Queens 225 - Ultimate challenge level
+- Queens Level 152 - Advanced strategic gameplay  
+- Queens Level 53 - Mid-tier puzzle solving
+- Queens Level 81 - Complex royal challenges
+- Queens Level 11, 12, 40 - Beginner to intermediate levels
+- 80 Queens - Classic puzzle collection
+- Color Cannon Level 39 - Special puzzle mechanics
+
+### Game Categories:
+- Royal Action (16 games) - Fast-paced action games
+- Royal Adventure (9 games) - Story-driven adventures  
+- Royal Racing (4 games) - High-speed racing experiences
+- Royal Puzzle (12 games) - Brain-teasing puzzle games
+- Royal Tournament (2 games) - Competitive gaming
+- Royal Clicker (2 games) - Idle and clicker games
+
+## Key Features:
+- 85+ premium games across 6 royal categories
+- Advanced search and filtering system
+- Modern glassmorphism UI design
+- Mobile-first responsive design
+- SEO optimized for better discoverability
+- Automated game management system
+- Real-time game updates via RSS feeds
+
+## Technical Stack:
+- Frontend: React 18 + TypeScript + Tailwind CSS
+- Build Tool: Vite for fast development and building
+- Icons: Lucide React for beautiful iconography
+- Routing: React Router for seamless navigation
+- Performance: Optimized loading and caching
+
+## Game Integration:
+- API-first design ready for GameMonetize, CrazyGames APIs
+- Secure iframe embedding system
+- Smart deduplication and categorization
+- Progressive difficulty and skill-based matching
+- Cross-platform compatibility (Web, Mobile, Desktop)
+
+## SEO & Discovery:
+- Comprehensive sitemap generation
+- Structured data markup (Schema.org)
+- Meta tag optimization for all games
+- Social media sharing optimization
+- Search engine friendly URLs
+
+## Content Guidelines:
+- All games are free to play
+- Family-friendly content across all categories
+- Regular content updates and new game additions
+- Quality assurance and game validation
+- User rating and feedback system
+
+## Contact & Support:
+For questions about our games, technical support, or partnership opportunities, please refer to our website contact information.
+
+---
+Last Updated: October 3, 2025
+Total Games: 85+
+Featured Categories: 6 Royal Gaming Categories
+Primary Focus: Queens puzzle games and royal gaming experiences

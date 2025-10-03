@@ -22,7 +22,10 @@
     "update-help": "node scripts/autoUpdate.js --help",
     "cleanup": "node scripts/cleanupProject.js",
     "cleanup:dry": "node scripts/cleanupProject.js --dry-run",
-    "cleanup:force": "node scripts/cleanupProject.js --force"
+    "cleanup:force": "node scripts/cleanupProject.js --force",
+    "indexnow:create-key": "node scripts/indexNowSubmit.cjs --create-key",
+    "indexnow:submit-queens": "node scripts/indexNowSubmit.cjs --submit-queens",
+    "indexnow:submit-url": "node scripts/indexNowSubmit.cjs --submit-url"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
