@@ -42,6 +42,46 @@ export const featuredGames: Game[] = [
       "Experience the ultimate Beast Cookie saga in Cookie Run Kingdom"
     ]
   },
+  // 新套壳游戏 - Queens Game 225 (SEO优化版本)
+  {
+    id: "queensgame-mirror",
+    title: "Queens Game 225 - Ultimate Royal Gaming Portal",
+    description: "Play Queens Game 225 and master challenging royal puzzle levels! Experience Queens Level 152, Queens Level 53, Queens Level 81, and 80+ queens games. Free online puzzle gaming with progressive difficulty from Queens Level 11 to Queens 225. Challenge yourself with Color Cannon Level 39 and other strategic royal adventures. Perfect for puzzle enthusiasts seeking brain-teasing gameplay and logical challenges.",
+    shortDescription: "Play Queens 225, Level 152, 53, 81 & 80+ royal puzzle games - Free online strategic gaming portal!",
+    thumbnail: "/thumbnail/How To Get SILKSONG For FREE.jpg",
+    category: "Royal Puzzle",
+    tags: ["Queens 225", "Queens Level 152", "Queens Level 53", "Queens Level 81", "80 Queens", "Queens Level 11", "Queens Level 12", "Queens Level 40", "Color Cannon Level 39", "Puzzle Games", "Royal Games", "Strategy", "Brain Games", "Logic Puzzles", "Free Games"],
+    url: "/games/queensgame-mirror",
+    embedUrl: "https://queensgame.vercel.app/",
+    fallbackUrls: ["https://queensgame.vercel.app/"],
+    width: 1280,
+    height: 720,
+    provider: "external",
+    rating: 4.9,
+    plays: 25000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    bestGame: true,
+    mostPlayed: true,
+    createdAt: "2025-10-03T12:00:00.000Z",
+    author: "Royal Queens Gaming",
+    releaseDate: "2025-10-03",
+    language: "English",
+    seoKeywords: "queens 225, queens level 152, queens level 53, queens level 81, 80 queens, queens level 11, queens level 12, queens level 40, color cannon level 39, queens game, royal puzzle games, strategic puzzle games, free online puzzle games, brain games, logic puzzles",
+    external: true,
+    instructions: [
+      "Master Queens Game 225 - the ultimate royal puzzle challenge",
+      "Progress through Queens Level 11, 12, 40 for beginners",
+      "Tackle intermediate challenges: Queens Level 53 and Queens Level 81", 
+      "Conquer advanced levels: Queens Level 152 and Queens 225",
+      "Explore the complete 80 Queens game collection",
+      "Challenge yourself with Color Cannon Level 39 special puzzles",
+      "Use strategic thinking and logical reasoning to solve each level",
+      "Enjoy progressive difficulty that adapts to your skill level"
+    ]
+  },
   // 新游戏推荐 - 置顶显示
   {
     id: "subway-moto",
