@@ -82,6 +82,44 @@ export const featuredGames: Game[] = [
       "Enjoy progressive difficulty that adapts to your skill level"
     ]
   },
+  // Pixel Exile - 新增的 ARPG 游戏
+  {
+    id: "pixel-exile",
+    title: "Pixel Exile - Incremental ARPG",
+    description: "Restore your power in Pixel Exile, a captivating 2D Action RPG inspired by classic titles like Diablo and Path of Exile. This engaging incremental ARPG offers endless replayability with its thrilling adventure mechanics, character progression, and loot system. Master different character classes, explore dangerous dungeons, collect epic loot, and battle through challenging encounters. With its pixel art style and deep gameplay mechanics, Pixel Exile delivers the perfect blend of nostalgia and modern ARPG innovation for fans of the genre.",
+    shortDescription: "Epic 2D Action RPG with incremental mechanics - explore dungeons, collect loot, and master character progression!",
+    thumbnail: "/thumbnail/Pixel Exile - Incremental ARPG.png",
+    category: "Royal Adventure",
+    tags: ["1 Player", "Action RPG", "Arcade", "Dungeon Crawler", "Hack and Slash", "Indie", "Pixel Art", "Roguelike", "Top-Down", "Incremental", "Loot", "Character Progression", "New Game"],
+    url: "/games/pixel-exile",
+    embedUrl: "https://silverflygames.itch.io/pixel-exile",
+    fallbackUrls: ["https://silverflygames.itch.io/pixel-exile"],
+    width: 1280,
+    height: 720,
+    provider: "external",
+    rating: 4.8,
+    plays: 15000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-10-07T12:00:00.000Z",
+    author: "Silverfly Games",
+    releaseDate: "2025-10-07",
+    language: "English",
+    seoKeywords: "pixel exile, incremental arpg, 2d action rpg, diablo inspired, path of exile, dungeon crawler, pixel art rpg, indie arpg, hack and slash, roguelike, character progression, loot system",
+    external: true,
+    instructions: [
+      "Choose your character class and customize your build for different playstyles",
+      "Explore dangerous dungeons filled with monsters, traps, and valuable loot",
+      "Use mouse clicks to move your character and attack enemies",
+      "Collect weapons, armor, and magical items to enhance your character's power",
+      "Level up your character and unlock new skills and abilities",
+      "Master different weapon types and combat strategies for various enemies",
+      "Progress through increasingly challenging areas and boss encounters",
+      "Manage your inventory and equipment to optimize your character build"
+    ]
+  },
   // 新游戏推荐 - 置顶显示
   {
     id: "subway-moto",

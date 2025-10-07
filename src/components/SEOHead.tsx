@@ -146,7 +146,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
         setTwitterTag('twitter:image', ogImage);
       }
       
-      // 设置canonical URL
+      // 设置canonical URL - 确保使用统一的域名格式
+      const normalizeUrl = (url: string) => {
+        return url.replace(/^https?:\/\/(www\.)?/, 'https://').replace(/\/$/, '') + (url.endsWith('/') ? '/' : '');
+      };
+      
       if (canonical) {
         let canonicalLink = document.querySelector('link[rel="canonical"]');
         if (!canonicalLink) {
@@ -154,7 +158,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
           canonicalLink.setAttribute('rel', 'canonical');
           document.head.appendChild(canonicalLink);
         }
-        canonicalLink.setAttribute('href', canonical);
+        canonicalLink.setAttribute('href', normalizeUrl(canonical));
       }
       
       return;
@@ -220,14 +224,18 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ game, title, description, keyw
       setTwitterTag('twitter:image', ogImage || game.thumbnail);
       setTwitterTag('twitter:site', '@QueensGame');
       
-      // 设置canonical URL
+      // 设置canonical URL - 确保使用统一的域名格式
+      const normalizeUrl = (url: string) => {
+        return url.replace(/^https?:\/\/(www\.)?/, 'https://').replace(/\/$/, '') + (url.endsWith('/') ? '/' : '');
+      };
+      
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {
         canonicalLink = document.createElement('link');
         canonicalLink.setAttribute('rel', 'canonical');
         document.head.appendChild(canonicalLink);
       }
-      canonicalLink.setAttribute('href', canonical || window.location.href);
+      canonicalLink.setAttribute('href', normalizeUrl(canonical || window.location.href));
       
       // 添加结构化数据 (JSON-LD) - Enhanced for better SEO
       const structuredData = {

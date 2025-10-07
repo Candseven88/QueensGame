@@ -25,7 +25,11 @@
     "cleanup:force": "node scripts/cleanupProject.js --force",
     "indexnow:create-key": "node scripts/indexNowSubmit.cjs --create-key",
     "indexnow:submit-queens": "node scripts/indexNowSubmit.cjs --submit-queens",
-    "indexnow:submit-url": "node scripts/indexNowSubmit.cjs --submit-url"
+    "indexnow:submit-url": "node scripts/indexNowSubmit.cjs --submit-url",
+    "fix-seo": "node scripts/fixSEOIssues.js",
+    "fix-seo-additional": "node scripts/fixAdditionalSEOIssues.js",
+    "seo:report": "node scripts/fixSEOIssues.js && cat SEO_FIX_REPORT.md",
+    "seo:report-additional": "node scripts/fixAdditionalSEOIssues.js && cat ADDITIONAL_SEO_FIX_REPORT.md"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",

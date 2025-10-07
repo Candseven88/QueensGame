@@ -15,22 +15,47 @@ Our flagship game "Queens Game 225" offers the ultimate royal puzzle gaming expe
 - 80 Queens - Classic puzzle collection
 - Color Cannon Level 39 - Special puzzle mechanics
 
+## New Featured Games:
+
+### Pixel Exile - Incremental ARPG
+A captivating 2D Action RPG inspired by classic titles like Diablo and Path of Exile. Features:
+- Incremental progression system with endless character development
+- Beautiful pixel art graphics with nostalgic charm
+- Deep dungeon crawling with challenging monsters and bosses
+- Extensive loot system with weapons, armor, and magical items
+- Multiple character classes with unique skills and abilities
+- Roguelike elements for high replayability
+- Top-down perspective hack-and-slash combat
+- Available at: /games/pixel-exile
+
 ### Game Categories:
-- Royal Action (16 games) - Fast-paced action games
-- Royal Adventure (9 games) - Story-driven adventures  
+- Royal Action (17 games) - Fast-paced action games including Pixel Exile
+- Royal Adventure (10 games) - Story-driven adventures and RPGs
 - Royal Racing (4 games) - High-speed racing experiences
 - Royal Puzzle (12 games) - Brain-teasing puzzle games
 - Royal Tournament (2 games) - Competitive gaming
 - Royal Clicker (2 games) - Idle and clicker games
 
+## Blog Content:
+
+### Demon Rush: The Ultimate K-Pop Demon Hunters Experience
+Comprehensive guide covering Fortnite's exciting limited-time mode inspired by K-Pop Demon Hunters:
+- Detailed gameplay mechanics and strategies
+- Mythic items breakdown (Rumi's Sword, Mira's Ramen, Zoey's Shield, Tiger's Mask)
+- Character recruitment strategies
+- Advanced winning tactics and team synergy
+- Cultural impact analysis of East-West gaming collaboration
+- Available at: /blog/demon-rush-fortnite-guide
+
 ## Key Features:
-- 85+ premium games across 6 royal categories
+- 86+ premium games across 6 royal categories
 - Advanced search and filtering system
 - Modern glassmorphism UI design
 - Mobile-first responsive design
 - SEO optimized for better discoverability
 - Automated game management system
 - Real-time game updates via RSS feeds
+- Comprehensive blog content with gaming guides
 
 ## Technical Stack:
 - Frontend: React 18 + TypeScript + Tailwind CSS
@@ -64,7 +89,9 @@ Our flagship game "Queens Game 225" offers the ultimate royal puzzle gaming expe
 For questions about our games, technical support, or partnership opportunities, please refer to our website contact information.
 
 ---
-Last Updated: October 3, 2025
-Total Games: 85+
+Last Updated: October 7, 2025
+Total Games: 86+
+Total Blog Articles: 1+
 Featured Categories: 6 Royal Gaming Categories
-Primary Focus: Queens puzzle games and royal gaming experiences
+Primary Focus: Queens puzzle games, royal gaming experiences, and comprehensive gaming guides
+New Content: Pixel Exile ARPG, Demon Rush Fortnite Guide

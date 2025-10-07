@@ -25,6 +25,10 @@ import { KirkaPage } from "./pages/KirkaPage";
 import { SilksongFreePage } from "./pages/SilksongFreePage";
 import { RaceSurvivalPage } from "./pages/RaceSurvivalPage";
 import { QueensGameMirrorPage } from "./pages/QueensGameMirrorPage";
+import { CommunityLevelPage } from "./pages/CommunityLevelPage";
+import { LevelPage } from "./pages/LevelPage";
+import { PixelExilePage } from "./pages/PixelExilePage";
+import { DemonRushBlogPage } from "./pages/DemonRushBlogPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -60,6 +64,8 @@ function App() {
             <Routes>
               <Route path="/games/:gameId" element={<GameDetailPage />} />
               <Route path="/topic/:topicSlug" element={<TopicPage />} />
+              <Route path="/community-level/:levelId" element={<CommunityLevelPage />} />
+              <Route path="/level/:levelId" element={<LevelPage />} />
               <Route path="/hollow-knight-silksong" element={<SilksongPage />} />
               <Route path="/drift-boss" element={<DriftBossPage />} />
               <Route path="/rabbit-road" element={<RabbitRoadPage />} />
@@ -71,6 +77,8 @@ function App() {
               <Route path="/games/silksong-free" element={<SilksongFreePage />} />
               <Route path="/games/race-survival-arena-king" element={<RaceSurvivalPage />} />
               <Route path="/games/queensgame-mirror" element={<QueensGameMirrorPage />} />
+              <Route path="/games/pixel-exile" element={<PixelExilePage />} />
+              <Route path="/blog/demon-rush-fortnite-guide" element={<DemonRushBlogPage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
               <Route path="/palworld" element={<PalworldPage />} />
               

@@ -1,23 +1,25 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://queensgame.games/sitemap-index.xml
-Sitemap: https://queensgame.games/sitemap.xml
-Sitemap: https://queensgame.games/sitemap-games.xml
-Sitemap: https://queensgame.games/sitemap-topics.xml
-Sitemap: https://queensgame.games/sitemap-main.xml
+# 禁止抓取重复和临时页面
+Disallow: /search/portal.php
+Disallow: /search/tsc.php
+Disallow: /search/fb.php
+Disallow: /caf/
+Disallow: /*?l=*
+Disallow: /*?ses=*
 
-# Important pages
-Allow: /yugioh-genesys
-Allow: /games
-Allow: /games/queensgame-mirror
+# 允许重要页面
+Allow: /games/
+Allow: /blog/
 Allow: /topic/
+Allow: /community-level/
+Allow: /level/
+Allow: /yugioh-genesys
+Allow: /palworld
+Allow: /hollow-knight-silksong
 
-# Crawl delay
-Crawl-delay: 1
-
-# Clean URLs
+# 允许静态资源
 Allow: /*.css
 Allow: /*.js
 Allow: /*.png
@@ -25,3 +27,14 @@ Allow: /*.jpg
 Allow: /*.jpeg
 Allow: /*.gif
 Allow: /*.webp
+Allow: /thumbnail/
+
+# Sitemaps
+Sitemap: https://queensgame.games/sitemap-index.xml
+Sitemap: https://queensgame.games/sitemap.xml
+Sitemap: https://queensgame.games/sitemap-games.xml
+Sitemap: https://queensgame.games/sitemap-topics.xml
+Sitemap: https://queensgame.games/sitemap-main.xml
+
+# 抓取延迟
+Crawl-delay: 1
