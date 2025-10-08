@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAP ROAD Embed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .test-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-section h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        iframe {
+            border: 2px solid #007cba;
+            border-radius: 5px;
+        }
+        .error-info {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .success-info {
+            background-color: #d1edff;
+            border: 1px solid #74b9ff;
+            color: #0984e3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>TAP ROAD Iframe Embed Test</h1>
+        <p>This page tests different ways to embed the TAP ROAD game from ICC Games.</p>
+        
+        <!-- Test 1: Official Embed Code -->
+        <div class="test-section">
+            <h2>Test 1: Official Embed Code (Exact Copy)</h2>
+            <p>Using the exact code provided by ICC Games:</p>
+            <code>&lt;iframe id="playframe" width="800" height="500" src="https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</code>
+            
+            <div style="margin: 20px 0;">
+                <a href="https://icc-games.com">Play Free Online Games for Kids | ICC Games – Safe & Fun</a><br />
+                <iframe id="playframe" width="800" height="500" src="https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html" frameborder="0" scrolling="no"></iframe>
+            </div>
+            
+            <div class="error-info">
+                <strong>Note:</strong> If you see an error message or blank frame above, it means ICC Games has set security headers (X-Frame-Options or Content-Security-Policy) that prevent embedding on external domains.
+            </div>
+        </div>
+        
+        <!-- Test 2: Modern Iframe Attributes -->
+        <div class="test-section">
+            <h2>Test 2: Modern Iframe with Additional Attributes</h2>
+            <p>Using modern iframe attributes that might help with embedding:</p>
+            
+            <div style="margin: 20px 0;">
+                <iframe 
+                    width="800" 
+                    height="500" 
+                    src="https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html" 
+                    frameborder="0" 
+                    scrolling="no"
+                    allowfullscreen
+                    allow="gamepad; microphone; camera; fullscreen; autoplay"
+                    loading="eager"
+                    title="TAP ROAD Game"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
+                ></iframe>
+            </div>
+        </div>
+        
+        <!-- Test 3: Alternative Loading -->
+        <div class="test-section">
+            <h2>Test 3: Direct Link Test</h2>
+            <p>If embedding fails, you can still access the game directly:</p>
+            <a href="https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html" target="_blank" style="display: inline-block; background: #007cba; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                Open TAP ROAD in New Tab
+            </a>
+            
+            <div class="success-info">
+                <strong>Fallback Solution:</strong> If iframe embedding is blocked, we can provide a "Play in New Tab" button as an alternative.
+            </div>
+        </div>
+        
+        <!-- JavaScript Test -->
+        <div class="test-section">
+            <h2>Test 4: JavaScript Load Detection</h2>
+            <p>Testing iframe load status with JavaScript:</p>
+            <div id="load-status">Checking iframe load status...</div>
+        </div>
+    </div>
+
+    <script>
+        // Test iframe load status
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('playframe');
+            const statusDiv = document.getElementById('load-status');
+            
+            let loadTimeout = setTimeout(() => {
+                statusDiv.innerHTML = '<span style="color: red;">⚠️ Iframe failed to load within 10 seconds - likely blocked by X-Frame-Options</span>';
+            }, 10000);
+            
+            iframe.onload = function() {
+                clearTimeout(loadTimeout);
+                statusDiv.innerHTML = '<span style="color: green;">✅ Iframe loaded successfully!</span>';
+                
+                // Try to access iframe content (will fail if cross-origin)
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    if (iframeDoc) {
+                        statusDiv.innerHTML += '<br><span style="color: green;">✅ Iframe content is accessible</span>';
+                    }
+                } catch (e) {
+                    statusDiv.innerHTML += '<br><span style="color: orange;">⚠️ Iframe content is not accessible due to cross-origin policy (this is normal)</span>';
+                }
+            };
+            
+            iframe.onerror = function() {
+                clearTimeout(loadTimeout);
+                statusDiv.innerHTML = '<span style="color: red;">❌ Iframe failed to load - error event triggered</span>';
+            };
+        });
+    </script>
+</body>
+</html>

@@ -13,6 +13,7 @@
     "fetch-specific-games": "node scripts/fetchSpecificGames.js",
     "generate-sitemap": "node scripts/generateSitemap.js",
     "generate-enhanced-sitemap": "node scripts/generateEnhancedSitemap.cjs",
+    "generate-complete-sitemap": "node scripts/generateCompleteSitemap.cjs",
     "update-github": "node scripts/updateGitHub.js",
     "check-push-status": "node scripts/checkPushStatus.js",
     "deploy-cloudflare": "node scripts/deployToCloudflare.js",

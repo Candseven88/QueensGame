@@ -4,10 +4,8 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { GameDetailPage } from "./pages/GameDetailPage";
 import { TopicPage } from "./pages/TopicPage";
-import { TopicShowcase } from "./components/TopicShowcase";
 import { SilksongPromo } from "./components/SilksongPromo";
 import { SilentSaltPromo } from "./components/SilentSaltPromo";
-import { GameFilters } from "./components/filters/GameFilters";
 import { GameGrid } from "./components/filters/GameGrid";
 import { GamingBackground } from "./components/ui/EnhancedBackground";
 import { RouteTransition } from "./components/animations/PageTransition";
@@ -28,6 +26,7 @@ import { QueensGameMirrorPage } from "./pages/QueensGameMirrorPage";
 import { CommunityLevelPage } from "./pages/CommunityLevelPage";
 import { LevelPage } from "./pages/LevelPage";
 import { PixelExilePage } from "./pages/PixelExilePage";
+import { TapRoadPage } from "./pages/TapRoadPage";
 import { DemonRushBlogPage } from "./pages/DemonRushBlogPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
@@ -35,18 +34,16 @@ import { trackPageView, trackGameView } from "./utils/analytics";
 import './styles/design-system.css';
 
 function App() {
-  const [showAllGames, setShowAllGames] = useState(false);
-  const [filteredGames, setFilteredGames] = useState<Game[]>(allGames);
+  const [filteredGames, setFilteredGames] = useState<Game[]>(
+    // 按创建时间排序，新游戏在前
+    allGames.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  );
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const handleGameClick = (game: Game) => {
     trackGameView(game);
     const gameId = game.url.split("/").pop();
     window.location.href = `/games/${gameId}`;
-  };
-
-  const handleFilteredGames = (games: Game[]) => {
-    setFilteredGames(games);
   };
 
   const handleViewModeChange = (mode: "grid" | "list") => {
@@ -78,6 +75,7 @@ function App() {
               <Route path="/games/race-survival-arena-king" element={<RaceSurvivalPage />} />
               <Route path="/games/queensgame-mirror" element={<QueensGameMirrorPage />} />
               <Route path="/games/pixel-exile" element={<PixelExilePage />} />
+              <Route path="/games/tap-road" element={<TapRoadPage />} />
               <Route path="/blog/demon-rush-fortnite-guide" element={<DemonRushBlogPage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
               <Route path="/palworld" element={<PalworldPage />} />
@@ -93,18 +91,8 @@ function App() {
                           All Games
                         </h1>
                         <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                          Browse our complete collection of {allGames.length} premium games
+                          Browse our complete collection of {allGames.length} premium games. New games appear at the top!
                         </p>
-                      </div>
-                      
-                      {/* 游戏过滤器和网格 */}
-                      <div className="premium-card p-6 mb-8">
-                        <GameFilters 
-                          games={allGames} 
-                          onFilteredGames={handleFilteredGames}
-                          viewMode={viewMode}
-                          onViewModeChange={handleViewModeChange}
-                        />
                       </div>
 
                       <GameGrid 
@@ -118,11 +106,7 @@ function App() {
                         <div className="premium-card p-4 max-w-md mx-auto">
                           <p className="text-white">
                             Total Games: <span className="gradient-text font-bold">{allGames.length}</span>
-                            {filteredGames.length !== allGames.length && (
-                              <>
-                                {" "}• Showing: <span className="gradient-text font-bold">{filteredGames.length}</span>
-                              </>
-                            )}
+                            <span className="text-gray-300 text-sm ml-2">• Sorted by newest first</span>
                           </p>
                         </div>
                       </div>
@@ -146,19 +130,6 @@ function App() {
                           Discover our premium collection of royal gaming experiences. Play the best HTML5 games online for free!
                         </p>
                         
-                        {/* Quick Action Buttons */}
-                        <div className="flex items-center justify-center space-x-6 mb-8">
-                          <PremiumButton
-                            variant={showAllGames ? "secondary" : "neon"}
-                            effect="glow"
-                            size="lg"
-                            onClick={() => setShowAllGames(!showAllGames)}
-                            className="shadow-2xl"
-                          >
-                            {showAllGames ? 'Show Featured' : 'Browse All Games'}
-                          </PremiumButton>
-                        </div>
-
                         {/* Featured Queens Game 225 Promotion */}
                         <div className="premium-card p-8 mb-12 bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-2 border-purple-400/30">
                           <div className="text-center">
@@ -194,73 +165,51 @@ function App() {
                         </div>
                       </div>
 
-                      {/* Conditional Content */}
-                      {showAllGames ? (
-                        <div>
-                          {/* Full Game Browser with Filters */}
-                          <div className="premium-card p-6 mb-8">
-                            <GameFilters 
-                              games={allGames} 
-                              onFilteredGames={handleFilteredGames}
-                              viewMode={viewMode}
-                              onViewModeChange={handleViewModeChange}
-                            />
-                          </div>
+                      {/* All Games Grid */}
+                      <div className="mb-12">
+                        <div className="text-center mb-8">
+                          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 gradient-text-neon">
+                            🎮 All Games
+                          </h2>
+                          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                            Discover our complete collection of {allGames.length} premium games. New games are added regularly and appear at the top!
+                          </p>
+                        </div>
 
-                          <GameGrid 
-                            games={filteredGames}
-                            viewMode={viewMode}
-                            onGameClick={handleGameClick}
-                          />
+                        <GameGrid 
+                          games={filteredGames}
+                          viewMode={viewMode}
+                          onGameClick={handleGameClick}
+                        />
 
-                          {/* Statistics */}
-                          <div className="text-center mt-12 pb-8">
-                            <div className="premium-card p-4 max-w-md mx-auto">
-                              <p className="text-white">
-                                Total Games: <span className="gradient-text font-bold">{allGames.length}</span>
-                                {filteredGames.length !== allGames.length && (
-                                  <>
-                                    {" "}• Showing: <span className="gradient-text font-bold">{filteredGames.length}</span>
-                                  </>
-                                )}
-                              </p>
-                            </div>
+                        {/* Game Statistics */}
+                        <div className="text-center mt-8">
+                          <div className="premium-card p-4 max-w-md mx-auto">
+                            <p className="text-white">
+                              Total Games: <span className="gradient-text font-bold">{allGames.length}</span>
+                              <span className="text-gray-300 text-sm ml-2">• Updated Daily</span>
+                            </p>
                           </div>
                         </div>
-                      ) : (
-                        <>
-                          {/* Featured Topic Showcase */}
-                          <TopicShowcase onGameClick={handleGameClick} />
-                          
-                          {/* Simple Stats */}
-                          <div className="text-center mt-12 pb-8">
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                              <div className="premium-card p-4">
-                                <div className="text-2xl font-bold gradient-text mb-1">{allGames.length}+</div>
-                                <div className="text-white/80 text-sm">Total Games</div>
-                              </div>
-                              <div className="premium-card p-4">
-                                <div className="text-2xl font-bold gradient-text mb-1">12</div>
-                                <div className="text-white/80 text-sm">Categories</div>
-                              </div>
-                              <div className="premium-card p-4">
-                                <div className="text-2xl font-bold gradient-text mb-1">100%</div>
-                                <div className="text-white/80 text-sm">Free to Play</div>
-                              </div>
-                              <div className="premium-card p-4">
-                                <div className="text-2xl font-bold gradient-text mb-1">Daily</div>
-                                <div className="text-white/80 text-sm">Updates</div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          {/* Silent Salt Featured Partner Promo */}
-                          <SilentSaltPromo />
-                          
-                          {/* Silksong Hot Topic Promo - 放在页面底部 */}
-                          <SilksongPromo />
-                        </>
-                      )}
+                      </div>
+
+                      {/* HOT TOPIC Section */}
+                      <div className="mb-12">
+                        <div className="text-center mb-8">
+                          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 gradient-text-neon">
+                            🔥 HOT TOPIC
+                          </h2>
+                          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                            Trending topics and featured content from the gaming community
+                          </p>
+                        </div>
+
+                        {/* Silent Salt Featured Partner Promo */}
+                        <SilentSaltPromo />
+                        
+                        {/* Silksong Hot Topic Promo */}
+                        <SilksongPromo />
+                      </div>
                     </div>
                   </main>
                   <Footer />

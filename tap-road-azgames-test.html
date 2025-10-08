@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAP ROAD AZ Games Embed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-section h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        iframe {
+            border: 2px solid #007cba;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+        }
+        .success-info {
+            background-color: #d1edff;
+            border: 1px solid #74b9ff;
+            color: #0984e3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .warning-info {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .status.loading {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        .status.success {
+            background-color: #e8f5e8;
+            color: #2e7d32;
+        }
+        .status.error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>TAP ROAD - AZ Games Embed Test</h1>
+        <p>Testing the new TAP ROAD game source from AZ Games: <strong>https://azgames.io/game/tap-road/</strong></p>
+        
+        <!-- Test 1: Direct AZ Games Embed -->
+        <div class="test-section">
+            <h2>Test 1: AZ Games Direct Embed (Full Page)</h2>
+            <p>Testing direct embedding of the AZ Games TAP ROAD page:</p>
+            
+            <div id="status1" class="status loading">🔄 Loading AZ Games iframe...</div>
+            
+            <iframe 
+                id="azgames-full"
+                width="1024" 
+                height="768" 
+                src="https://azgames.io/game/tap-road/" 
+                frameborder="0" 
+                allowfullscreen
+                allow="gamepad; microphone; camera; fullscreen; autoplay"
+                loading="eager"
+                title="TAP ROAD - AZ Games"
+            ></iframe>
+            
+            <div class="success-info">
+                <strong>AZ Games Benefits:</strong>
+                <ul>
+                    <li>Usually more iframe-friendly than other gaming sites</li>
+                    <li>Professional game hosting platform</li>
+                    <li>Better embed support and fewer restrictions</li>
+                    <li>Responsive design that works well in iframes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Test 2: Responsive Size -->
+        <div class="test-section">
+            <h2>Test 2: Responsive Size (800x600)</h2>
+            <p>Testing with a smaller, more responsive size:</p>
+            
+            <div id="status2" class="status loading">🔄 Loading responsive iframe...</div>
+            
+            <iframe 
+                id="azgames-responsive"
+                width="800" 
+                height="600" 
+                src="https://azgames.io/game/tap-road/" 
+                frameborder="0" 
+                allowfullscreen
+                allow="gamepad; microphone; camera; fullscreen; autoplay"
+                loading="eager"
+                title="TAP ROAD - Responsive"
+            ></iframe>
+        </div>
+        
+        <!-- Test 3: Fallback Comparison -->
+        <div class="test-section">
+            <h2>Test 3: Fallback Comparison</h2>
+            <p>Comparing AZ Games vs ICC Games (previous source):</p>
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h4>AZ Games (New Source)</h4>
+                    <div id="status3a" class="status loading">🔄 Loading AZ Games...</div>
+                    <iframe 
+                        id="azgames-compare"
+                        width="400" 
+                        height="300" 
+                        src="https://azgames.io/game/tap-road/" 
+                        frameborder="0" 
+                        allowfullscreen
+                        title="TAP ROAD - AZ Games Small"
+                    ></iframe>
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h4>ICC Games (Previous Source)</h4>
+                    <div id="status3b" class="status loading">🔄 Loading ICC Games...</div>
+                    <iframe 
+                        id="icc-compare"
+                        width="400" 
+                        height="300" 
+                        src="https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html" 
+                        frameborder="0" 
+                        scrolling="no"
+                        title="TAP ROAD - ICC Games Small"
+                    ></iframe>
+                </div>
+            </div>
+            
+            <div class="warning-info">
+                <strong>Expected Results:</strong>
+                <ul>
+                    <li><strong>AZ Games</strong>: Should load successfully with full game interface</li>
+                    <li><strong>ICC Games</strong>: May show "connection refused" or blank frame</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Test 4: Mobile Responsive -->
+        <div class="test-section">
+            <h2>Test 4: Mobile-Friendly Size</h2>
+            <p>Testing mobile-friendly dimensions:</p>
+            
+            <div id="status4" class="status loading">🔄 Loading mobile iframe...</div>
+            
+            <iframe 
+                id="azgames-mobile"
+                width="360" 
+                height="640" 
+                src="https://azgames.io/game/tap-road/" 
+                frameborder="0" 
+                allowfullscreen
+                allow="gamepad; microphone; camera; fullscreen; autoplay"
+                title="TAP ROAD - Mobile"
+                style="max-width: 100%;"
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Test iframe load status for multiple iframes
+        const iframes = [
+            { id: 'azgames-full', statusId: 'status1', name: 'AZ Games Full' },
+            { id: 'azgames-responsive', statusId: 'status2', name: 'AZ Games Responsive' },
+            { id: 'azgames-compare', statusId: 'status3a', name: 'AZ Games Compare' },
+            { id: 'icc-compare', statusId: 'status3b', name: 'ICC Games Compare' },
+            { id: 'azgames-mobile', statusId: 'status4', name: 'AZ Games Mobile' }
+        ];
+
+        iframes.forEach(({ id, statusId, name }) => {
+            const iframe = document.getElementById(id);
+            const statusDiv = document.getElementById(statusId);
+            
+            let loadTimeout = setTimeout(() => {
+                statusDiv.textContent = `⚠️ ${name} - Loading timeout (may be blocked)`;
+                statusDiv.className = 'status error';
+            }, 15000);
+            
+            iframe.onload = function() {
+                clearTimeout(loadTimeout);
+                statusDiv.textContent = `✅ ${name} - Loaded successfully!`;
+                statusDiv.className = 'status success';
+                
+                console.log(`✅ ${name} loaded successfully`);
+            };
+            
+            iframe.onerror = function() {
+                clearTimeout(loadTimeout);
+                statusDiv.textContent = `❌ ${name} - Failed to load`;
+                statusDiv.className = 'status error';
+                
+                console.error(`❌ ${name} failed to load`);
+            };
+        });
+
+        // Log test start
+        console.log('🚀 Starting TAP ROAD AZ Games embed tests...');
+        console.log('📍 AZ Games URL: https://azgames.io/game/tap-road/');
+        console.log('📍 ICC Games URL (fallback): https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html');
+    </script>
+</body>
+</html>

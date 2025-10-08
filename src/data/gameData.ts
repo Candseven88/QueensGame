@@ -120,6 +120,44 @@ export const featuredGames: Game[] = [
       "Manage your inventory and equipment to optimize your character build"
     ]
   },
+  // TAP ROAD - 新套壳游戏
+  {
+    id: "tap-road",
+    title: "TAP ROAD - Neon Ball Rolling Adventure",
+    description: "Play TAP ROAD online for free and dive into a neon-lit endless runner that tests your reflexes! Guide a glowing ball along twisting tracks, dodge hazards, and collect gems to climb the leaderboards. This fast-paced ball-rolling game features simple tap-to-switch controls that make it fun for newcomers, while the rising speed keeps veterans challenged. Perfect for kids aged 7 to 14 and families looking for friendly competition in an arcade-style thrill.",
+    shortDescription: "Neon endless runner with glowing ball - dodge obstacles, collect gems, test your reflexes in this arcade adventure!",
+    thumbnail: "/thumbnail/TAP ROAD 1.jpg",
+    category: "Royal Action",
+    tags: ["1 Player", "Arcade", "Endless Runner", "Neon", "Ball Game", "Reflex", "Fast-paced", "Mobile", "Family", "Kids", "Gems", "Obstacles", "New Game"],
+    url: "/games/tap-road",
+    embedUrl: "https://azgames.io/game/tap-road/",
+    fallbackUrls: ["https://azgames.io/game/tap-road/", "https://icc-games.com/wp-content/uploads/2025/09/Tap-Road.html"],
+    width: 1024,
+    height: 768,
+    provider: "external",
+    rating: 4.6,
+    plays: 28000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-10-08T12:00:00.000Z",
+    author: "AZ Games",
+    releaseDate: "2025-10-08",
+    language: "English",
+    seoKeywords: "TAP ROAD, tap road game, neon ball game, endless runner, arcade game, reflex game, free online game, browser game, mobile game, family game, kids game, glowing ball, neon tracks, obstacle course, gem collection",
+    external: true,
+    instructions: [
+      "Tap or click left/right side of the screen to change lanes in TAP ROAD",
+      "Use arrow keys on desktop for precise control of your glowing ball",
+      "Time your taps perfectly to avoid spikes, gaps, and other obstacles",
+      "Collect gems scattered along the track to boost your score",
+      "Watch for obstacle patterns - TAP ROAD often repeats sequences you can learn",
+      "Stay centered early to give yourself reaction time as speed increases",
+      "Focus on survival first, then work on collecting gems for higher scores",
+      "Practice the rhythm of TAP ROAD to become a master ball roller"
+    ]
+  },
   // 新游戏推荐 - 置顶显示
   {
     id: "subway-moto",
