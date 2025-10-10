@@ -122,7 +122,7 @@ export const Footer: React.FC = () => {
             <div className="premium-card p-6 rounded-xl space-y-4 border border-purple-500/20">
               <h5 className="text-lg font-bold text-white flex items-center">
                 <Star className="w-5 h-5 mr-2 text-yellow-400" />
-                Featured Partner
+                Featured Partners
               </h5>
               <div className="space-y-3">
                 <a 
@@ -140,6 +140,25 @@ export const Footer: React.FC = () => {
                     </p>
                     <div className="flex items-center text-xs text-purple-300">
                       <span>Play Silent Salt Cookie →</span>
+                    </div>
+                  </div>
+                </a>
+                
+                <a 
+                  href="https://plantsvsbrainrots.website/" 
+                  target="_blank" 
+                  rel="dofollow"
+                  className="block group"
+                >
+                  <div className="bg-gradient-to-r from-green-600/20 to-yellow-600/20 p-4 rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 group-hover:scale-105">
+                    <h6 className="text-white font-bold mb-1 group-hover:text-green-300 transition-colors">
+                      Plants vs Brainrots
+                    </h6>
+                    <p className="text-white/60 text-sm mb-2">
+                      The ultimate Roblox tycoon game mixing Plants vs Zombies with internet memes and brainrot characters
+                    </p>
+                    <div className="flex items-center text-xs text-green-300">
+                      <span>Play Plants vs Brainrots →</span>
                     </div>
                   </div>
                 </a>

@@ -6,6 +6,7 @@ import { GameDetailPage } from "./pages/GameDetailPage";
 import { TopicPage } from "./pages/TopicPage";
 import { SilksongPromo } from "./components/SilksongPromo";
 import { SilentSaltPromo } from "./components/SilentSaltPromo";
+import { PlantsVsBrainrotsPromo } from "./components/PlantsVsBrainrotsPromo";
 import { GameGrid } from "./components/filters/GameGrid";
 import { GamingBackground } from "./components/ui/EnhancedBackground";
 import { RouteTransition } from "./components/animations/PageTransition";
@@ -28,6 +29,7 @@ import { LevelPage } from "./pages/LevelPage";
 import { PixelExilePage } from "./pages/PixelExilePage";
 import { TapRoadPage } from "./pages/TapRoadPage";
 import { DemonRushBlogPage } from "./pages/DemonRushBlogPage";
+import { PlantsVsBrainrotsPage } from "./pages/PlantsVsBrainrotsPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -76,6 +78,7 @@ function App() {
               <Route path="/games/queensgame-mirror" element={<QueensGameMirrorPage />} />
               <Route path="/games/pixel-exile" element={<PixelExilePage />} />
               <Route path="/games/tap-road" element={<TapRoadPage />} />
+              <Route path="/games/plants-vs-brainrots" element={<PlantsVsBrainrotsPage />} />
               <Route path="/blog/demon-rush-fortnite-guide" element={<DemonRushBlogPage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
               <Route path="/palworld" element={<PalworldPage />} />
@@ -206,6 +209,9 @@ function App() {
 
                         {/* Silent Salt Featured Partner Promo */}
                         <SilentSaltPromo />
+                        
+                        {/* Plants vs Brainrots Partner Promo */}
+                        <PlantsVsBrainrotsPromo />
                         
                         {/* Silksong Hot Topic Promo */}
                         <SilksongPromo />

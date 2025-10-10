@@ -42,6 +42,44 @@ export const featuredGames: Game[] = [
       "Experience the ultimate Beast Cookie saga in Cookie Run Kingdom"
     ]
   },
+  // Plants vs Brainrots - Roblox 合作伙伴游戏
+  {
+    id: "plants-vs-brainrots",
+    title: "Plants vs Brainrots - Ultimate Roblox Tycoon Game",
+    description: "Experience the ultimate fusion of Plants vs Zombies and internet culture in this epic Roblox tycoon adventure! Build your plant army, defend against hilarious brainrot characters, and grow your tycoon empire. Master 14+ unique plants with special abilities, collect and sell defeated brainrot enemies for cash, and use strategic plant placement to create the ultimate defense. With regular codes for free rewards and engaging tycoon gameplay, Plants vs Brainrots offers endless entertainment mixing tower defense action with business simulation mechanics.",
+    shortDescription: "Epic Roblox tycoon mixing Plants vs Zombies with internet memes - Build plant armies and defeat brainrot characters!",
+    thumbnail: "/thumbnail/Plants_vs_Brainrots_logo.jpg",
+    category: "Royal Action",
+    tags: ["Multiplayer", "Tycoon", "Tower Defense", "Strategy", "Roblox", "Plants vs Zombies", "Brainrot", "Memes", "Business Simulation", "Free to Play", "Featured Partner", "Codes", "Plant Army"],
+    url: "/games/plants-vs-brainrots",
+    embedUrl: "https://www.roblox.com/games/127742093697776/Plants-Vs-Brainrots",
+    fallbackUrls: ["https://www.roblox.com/games/127742093697776/Plants-Vs-Brainrots"],
+    width: 1280,
+    height: 720,
+    provider: "external",
+    rating: 4.8,
+    plays: 15000,
+    featured: true,
+    trending: true,
+    editorsPick: true,
+    hotGame: true,
+    createdAt: "2025-10-10T12:00:00.000Z",
+    author: "Yo Gurt Studio",
+    releaseDate: "2025-10-10",
+    language: "English",
+    seoKeywords: "plants vs brainrots, roblox tycoon, plants vs zombies roblox, tower defense tycoon, brainrot memes, plant army, yo gurt studio, roblox games, tycoon games, strategy games, free roblox games",
+    external: true,
+    instructions: [
+      "Start by growing basic plants like Peashooters to defend your garden",
+      "Watch as your plants automatically fight waves of brainrot enemies",
+      "Collect defeated brainrot characters and sell them for cash rewards",
+      "Use earned money to buy better seeds and upgrade your existing plants",
+      "Strategically place plants to create effective defense lines",
+      "Unlock 14+ unique plants, each with special abilities and powers",
+      "Redeem codes for free cash, items, and exclusive plant upgrades",
+      "Expand your garden empire and become the ultimate plant tycoon master"
+    ]
+  },
   // 新套壳游戏 - Queens Game 225 (SEO优化版本)
   {
     id: "queensgame-mirror",

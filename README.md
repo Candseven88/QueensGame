@@ -2,7 +2,7 @@
 
 A premium, modern online gaming platform that brings together the best games from around the web. Built with React, TypeScript, and Tailwind CSS for an exceptional gaming experience.
 
-**Current Status**: 71 unique games across 6 royal categories with advanced deduplication system.
+**Current Status**: 72 unique games across 6 royal categories with advanced deduplication system, including featured partner games.
 
 ## 🚀 Features
 
@@ -270,6 +270,22 @@ node scripts/fetchSpecificGames.js
 - **Responsive Layout**: Adapts to all screen sizes
 - **Fast Loading**: Optimized for mobile networks
 - **Offline Support**: Basic offline functionality
+
+## 🤝 Featured Partners
+
+QueensGame proudly partners with premium gaming platforms to bring you the best gaming experiences:
+
+### Silent Salt Game Portal
+- **URL**: https://silentsalt.site/
+- **Description**: Experience the power of the Devil of Silence in Cookie Run Kingdom adventures
+- **Features**: Beast Cookie gameplay, eclipse powers, stealth mechanics
+
+### Plants vs Brainrots
+- **URL**: https://plantsvsbrainrots.website/
+- **Description**: Ultimate Roblox tycoon game mixing Plants vs Zombies with internet memes
+- **Features**: Tower defense action, tycoon gameplay, 14+ unique plants, brainrot characters
+
+Both partners are featured prominently on our homepage and footer with dofollow links for maximum SEO value.
 
 ## 🌟 Future Enhancements
 
