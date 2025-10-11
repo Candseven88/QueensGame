@@ -162,6 +162,25 @@ export const Footer: React.FC = () => {
                     </div>
                   </div>
                 </a>
+
+                <a 
+                  href="https://weaklegacy2.xyz/" 
+                  target="_blank" 
+                  rel="dofollow"
+                  className="block group"
+                >
+                  <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 p-4 rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 group-hover:scale-105">
+                    <h6 className="text-white font-bold mb-1 group-hover:text-red-300 transition-colors">
+                      Weak Legacy 2
+                    </h6>
+                    <p className="text-white/60 text-sm mb-2">
+                      The ultimate Roblox Demon Slayer adventure with breathing techniques and blood demon arts
+                    </p>
+                    <div className="flex items-center text-xs text-red-300">
+                      <span>Play Weak Legacy 2 →</span>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
 

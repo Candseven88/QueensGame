@@ -285,7 +285,12 @@ QueensGame proudly partners with premium gaming platforms to bring you the best 
 - **Description**: Ultimate Roblox tycoon game mixing Plants vs Zombies with internet memes
 - **Features**: Tower defense action, tycoon gameplay, 14+ unique plants, brainrot characters
 
-Both partners are featured prominently on our homepage and footer with dofollow links for maximum SEO value.
+### Weak Legacy 2
+- **URL**: https://weaklegacy2.xyz/
+- **Description**: The ultimate Roblox Demon Slayer adventure with breathing techniques and blood demon arts
+- **Features**: Demon slayer gameplay, breathing techniques, blood demon arts, intense combat system
+
+All partners are featured prominently on our homepage and footer with dofollow links for maximum SEO value.
 
 ## 🌟 Future Enhancements
 

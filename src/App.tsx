@@ -7,6 +7,7 @@ import { TopicPage } from "./pages/TopicPage";
 import { SilksongPromo } from "./components/SilksongPromo";
 import { SilentSaltPromo } from "./components/SilentSaltPromo";
 import { PlantsVsBrainrotsPromo } from "./components/PlantsVsBrainrotsPromo";
+import { WeakLegacy2Promo } from "./components/WeakLegacy2Promo";
 import { GameGrid } from "./components/filters/GameGrid";
 import { GamingBackground } from "./components/ui/EnhancedBackground";
 import { RouteTransition } from "./components/animations/PageTransition";
@@ -212,6 +213,9 @@ function App() {
                         
                         {/* Plants vs Brainrots Partner Promo */}
                         <PlantsVsBrainrotsPromo />
+
+                        {/* Weak Legacy 2 Partner Promo */}
+                        <WeakLegacy2Promo />
                         
                         {/* Silksong Hot Topic Promo */}
                         <SilksongPromo />
