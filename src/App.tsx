@@ -31,6 +31,10 @@ import { PixelExilePage } from "./pages/PixelExilePage";
 import { TapRoadPage } from "./pages/TapRoadPage";
 import { DemonRushBlogPage } from "./pages/DemonRushBlogPage";
 import { PlantsVsBrainrotsPage } from "./pages/PlantsVsBrainrotsPage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
+import { TermsOfServicePage } from "./pages/TermsOfServicePage";
+import { ContactPage } from "./pages/ContactPage";
+import { AboutPage } from "./pages/AboutPage";
 import { allGames } from "./data/gameData";
 import { Game } from "./types/Game";
 import { trackPageView, trackGameView } from "./utils/analytics";
@@ -83,6 +87,12 @@ function App() {
               <Route path="/blog/demon-rush-fortnite-guide" element={<DemonRushBlogPage />} />
               <Route path="/yugioh-genesys" element={<YugiohGenesysPage />} />
               <Route path="/palworld" element={<PalworldPage />} />
+              
+              {/* Legal and Information Pages */}
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsOfServicePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
               
               {/* 所有游戏页面路由 */}
               <Route path="/games" element={
